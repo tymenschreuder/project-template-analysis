@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Template Analysis</title>
+  <meta name="description" content="Recipes for Machine Learning Project">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Project Template Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Recipes for Machine Learning Project" />
+  <meta name="github-repo" content="tymenschreuder/project-template-analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Project Template Analysis" />
+  
+  <meta name="twitter:description" content="Recipes for Machine Learning Project" />
+  
+
+<meta name="author" content="Tymen Schreuder">
+
+
+<meta name="date" content="2017-07-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="prepare-problem.html">
+<link rel="next" href="prepare-data.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Project Template Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction: BLueprint and Recipes for Stats analytic Project</a></li>
+<li class="chapter" data-level="1" data-path="prepare-problem.html"><a href="prepare-problem.html"><i class="fa fa-check"></i><b>1</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="1.1" data-path="prepare-problem.html"><a href="prepare-problem.html#load-packages"><i class="fa fa-check"></i><b>1.1</b> Load packages</a></li>
+<li class="chapter" data-level="1.2" data-path="prepare-problem.html"><a href="prepare-problem.html#load-dataset"><i class="fa fa-check"></i><b>1.2</b> Load dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html"><i class="fa fa-check"></i><b>2</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="2.1" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.1</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-univariate"><i class="fa fa-check"></i><b>2.2</b> Data visualizations Univariate</a></li>
+<li class="chapter" data-level="2.3" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-projection"><i class="fa fa-check"></i><b>2.3</b> Data visualizations projection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prepare-data.html"><a href="prepare-data.html"><i class="fa fa-check"></i><b>3</b> Prepare Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="prepare-data.html"><a href="prepare-data.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="3.2" data-path="prepare-data.html"><a href="prepare-data.html#feature-selection"><i class="fa fa-check"></i><b>3.2</b> Feature Selection</a></li>
+<li class="chapter" data-level="3.3" data-path="prepare-data.html"><a href="prepare-data.html#data-transforms"><i class="fa fa-check"></i><b>3.3</b> Data Transforms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html"><i class="fa fa-check"></i><b>4</b> 04 Evaluate Algorithms</a><ul>
+<li class="chapter" data-level="4.1" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#spot-check-algorithms"><i class="fa fa-check"></i><b>4.1</b> Spot-Check Algorithms</a></li>
+<li class="chapter" data-level="4.2" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-regression"><i class="fa fa-check"></i><b>4.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="4.3" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#penalized-linear-regression"><i class="fa fa-check"></i><b>4.3</b> Penalized Linear Regression</a></li>
+<li class="chapter" data-level="4.4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-classification"><i class="fa fa-check"></i><b>4.4</b> Linear Classification</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#nonlinear-classification"><i class="fa fa-check"></i><b>4.5</b> NonLinear Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="improve-accuracy.html"><a href="improve-accuracy.html"><i class="fa fa-check"></i><b>5</b> 06 Improve Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="improve-accuracy.html"><a href="improve-accuracy.html#metrics"><i class="fa fa-check"></i><b>5.1</b> Metrics</a></li>
+<li class="chapter" data-level="5.2" data-path="improve-accuracy.html"><a href="improve-accuracy.html#resampling-methods"><i class="fa fa-check"></i><b>5.2</b> Resampling Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="improve-accuracy.html"><a href="improve-accuracy.html#model-selection"><i class="fa fa-check"></i><b>5.3</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html"><i class="fa fa-check"></i><b>6</b> Improve Accuracy</a><ul>
+<li class="chapter" data-level="6.1" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#tuning"><i class="fa fa-check"></i><b>6.1</b> Tuning</a></li>
+<li class="chapter" data-level="6.2" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#ensembles"><i class="fa fa-check"></i><b>6.2</b> Ensembles</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/tymenschreuder/project-template-analysis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Project Template Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prepare-problem-1" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Prepare Problem</h1>
+<div id="descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">2.1</span> Descriptive statistics</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the library</span>
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># display first 20 rows of data</span>
+<span class="kw">head</span>(PimaIndiansDiabetes, <span class="dt">n=</span><span class="dv">20</span>)</code></pre></div>
+<pre><code>##    pregnant glucose pressure triceps insulin mass pedigree age diabetes
+## 1         6     148       72      35       0 33.6    0.627  50      pos
+## 2         1      85       66      29       0 26.6    0.351  31      neg
+## 3         8     183       64       0       0 23.3    0.672  32      pos
+## 4         1      89       66      23      94 28.1    0.167  21      neg
+## 5         0     137       40      35     168 43.1    2.288  33      pos
+## 6         5     116       74       0       0 25.6    0.201  30      neg
+## 7         3      78       50      32      88 31.0    0.248  26      pos
+## 8        10     115        0       0       0 35.3    0.134  29      neg
+## 9         2     197       70      45     543 30.5    0.158  53      pos
+## 10        8     125       96       0       0  0.0    0.232  54      pos
+## 11        4     110       92       0       0 37.6    0.191  30      neg
+## 12       10     168       74       0       0 38.0    0.537  34      pos
+## 13       10     139       80       0       0 27.1    1.441  57      neg
+## 14        1     189       60      23     846 30.1    0.398  59      pos
+## 15        5     166       72      19     175 25.8    0.587  51      pos
+## 16        7     100        0       0       0 30.0    0.484  32      pos
+## 17        0     118       84      47     230 45.8    0.551  31      pos
+## 18        7     107       74       0       0 29.6    0.254  31      pos
+## 19        1     103       30      38      83 43.3    0.183  33      neg
+## 20        1     115       70      30      96 34.6    0.529  32      pos</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(datasets)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># summarize the dataset</span>
+<span class="kw">summary</span>(iris)</code></pre></div>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(BostonHousing)
+<span class="co"># list types for each attribute</span>
+<span class="kw">sapply</span>(BostonHousing, class)</code></pre></div>
+<pre><code>##      crim        zn     indus      chas       nox        rm       age 
+## &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot;  &quot;factor&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; 
+##       dis       rad       tax   ptratio         b     lstat      medv 
+## &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Class Distribution</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># distribution of class variable</span>
+y &lt;-<span class="st"> </span>PimaIndiansDiabetes<span class="op">$</span>diabetes
+<span class="kw">cbind</span>(<span class="dt">freq=</span><span class="kw">table</span>(y), <span class="dt">percentage=</span><span class="kw">prop.table</span>(<span class="kw">table</span>(y))<span class="op">*</span><span class="dv">100</span>)</code></pre></div>
+<pre><code>##     freq percentage
+## neg  500   65.10417
+## pos  268   34.89583</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Dimensions of your dataset</span>
+<span class="kw">dim</span>(PimaIndiansDiabetes)</code></pre></div>
+<pre><code>## [1] 768   9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summarize the dataset</span>
+<span class="kw">summary</span>(PimaIndiansDiabetes)</code></pre></div>
+<pre><code>##     pregnant         glucose         pressure         triceps     
+##  Min.   : 0.000   Min.   :  0.0   Min.   :  0.00   Min.   : 0.00  
+##  1st Qu.: 1.000   1st Qu.: 99.0   1st Qu.: 62.00   1st Qu.: 0.00  
+##  Median : 3.000   Median :117.0   Median : 72.00   Median :23.00  
+##  Mean   : 3.845   Mean   :120.9   Mean   : 69.11   Mean   :20.54  
+##  3rd Qu.: 6.000   3rd Qu.:140.2   3rd Qu.: 80.00   3rd Qu.:32.00  
+##  Max.   :17.000   Max.   :199.0   Max.   :122.00   Max.   :99.00  
+##     insulin           mass          pedigree           age       
+##  Min.   :  0.0   Min.   : 0.00   Min.   :0.0780   Min.   :21.00  
+##  1st Qu.:  0.0   1st Qu.:27.30   1st Qu.:0.2437   1st Qu.:24.00  
+##  Median : 30.5   Median :32.00   Median :0.3725   Median :29.00  
+##  Mean   : 79.8   Mean   :31.99   Mean   :0.4719   Mean   :33.24  
+##  3rd Qu.:127.2   3rd Qu.:36.60   3rd Qu.:0.6262   3rd Qu.:41.00  
+##  Max.   :846.0   Max.   :67.10   Max.   :2.4200   Max.   :81.00  
+##  diabetes 
+##  neg:500  
+##  pos:268  
+##           
+##           
+##           
+## </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculate Skewness</span>
+
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># calculate skewness for each variable</span>
+<span class="co">#skew &lt;- apply(PimaIndiansDiabetes[,1:8], 2, skewness)</span>
+<span class="co"># display skewness, larger/smaller deviations from 0 show more skew</span>
+<span class="co">#print(skew)</span>
+<span class="co"># calculate standard deviation for all attributes</span>
+<span class="kw">sapply</span>(PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], sd)</code></pre></div>
+<pre><code>##    pregnant     glucose    pressure     triceps     insulin        mass 
+##   3.3695781  31.9726182  19.3558072  15.9522176 115.2440024   7.8841603 
+##    pedigree         age 
+##   0.3313286  11.7602315</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Pair-wise correlations using pearson spearman coefficients</span>
+correlations &lt;-<span class="st"> </span><span class="kw">cor</span>(PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>)
+<span class="co"># display the correlation matrix</span>
+<span class="kw">print</span>(correlations)</code></pre></div>
+<pre><code>##               pregnant    glucose     pressure     triceps      insulin
+## pregnant  1.0000000000 0.13073352  0.185126732 -0.08522231 -0.126722724
+## glucose   0.1307335241 1.00000000  0.235190613  0.06002215  0.213205805
+## pressure  0.1851267321 0.23519061  1.000000000  0.12648587 -0.006770572
+## triceps  -0.0852223076 0.06002215  0.126485871  1.00000000  0.541000137
+## insulin  -0.1267227242 0.21320580 -0.006770572  0.54100014  1.000000000
+## mass      0.0001321469 0.23114119  0.292870430  0.44361451  0.192725681
+## pedigree -0.0432415012 0.09129336  0.030046335  0.18039048  0.221150492
+## age       0.6072163388 0.28504472  0.350894593 -0.06679492 -0.114212917
+##                  mass    pedigree         age
+## pregnant 0.0001321469 -0.04324150  0.60721634
+## glucose  0.2311411943  0.09129336  0.28504472
+## pressure 0.2928704303  0.03004633  0.35089459
+## triceps  0.4436145083  0.18039048 -0.06679492
+## insulin  0.1927256806  0.22115049 -0.11421292
+## mass     1.0000000000  0.14119203  0.13118588
+## pedigree 0.1411920297  1.00000000  0.04290859
+## age      0.1311858805  0.04290859  1.00000000</code></pre>
+</div>
+<div id="data-visualizations-univariate" class="section level2">
+<h2><span class="header-section-number">2.2</span> Data visualizations Univariate</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Univariate Histograms</span>
+
+<span class="co"># load the data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># create histograms for each attribute</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {
+    <span class="kw">hist</span>(iris[,i], <span class="dt">main=</span><span class="kw">names</span>(iris)[i])
+}</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-univariate-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Univariate Density Plots</span>
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># create a panel of simpler density plots by attribute</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {
+    <span class="kw">plot</span>(<span class="kw">density</span>(iris[,i]), <span class="dt">main=</span><span class="kw">names</span>(iris)[i])
+}</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-univariate-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Univarate Box And Whisker Plots</span>
+
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># Create separate boxplots for each attribute</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {
+    <span class="kw">boxplot</span>(iris[,i], <span class="dt">main=</span><span class="kw">names</span>(iris)[i])
+}</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-univariate-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot missing data</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(Amelia)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(Soybean)
+<span class="co"># create a missing map</span>
+<span class="kw">missmap</span>(Soybean, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;grey&quot;</span>), <span class="dt">legend=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-univariate-4.png" width="672" /> ## Data visualizations multivariate</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a density plot for each variable-class combination.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># density plots for each attribute by class value</span>
+x &lt;-<span class="st"> </span>iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+y &lt;-<span class="st"> </span>iris[,<span class="dv">5</span>]
+scales &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>))
+<span class="kw">featurePlot</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">plot=</span><span class="st">&quot;density&quot;</span>, <span class="dt">scales=</span>scales)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-multivariate-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Multivariate Scatterplot Matrix By Class</span>
+
+<span class="co"># load the data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># pair-wise scatterplots colored by class</span>
+<span class="kw">pairs</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">col=</span>iris<span class="op">$</span>Species)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-multivariate-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a box and whisker plots for each variable organized by class.</span>
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># box and whisker plots for each attribute by class value</span>
+x &lt;-<span class="st"> </span>iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+y &lt;-<span class="st"> </span>iris[,<span class="dv">5</span>]
+<span class="kw">featurePlot</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">plot=</span><span class="st">&quot;box&quot;</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-multivariate-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Multivariate Scatterplot Matrix</span>
+
+<span class="co"># load the data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># pair-wise scatterplots of all 4 attributes</span>
+<span class="kw">pairs</span>(iris)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-multivariate-4.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Correlation Plot</span>
+
+<span class="co"># load library</span>
+<span class="kw">library</span>(corrplot)
+<span class="co"># load the data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># calculate correlations</span>
+correlations &lt;-<span class="st"> </span><span class="kw">cor</span>(iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># create correlation plot</span>
+<span class="kw">corrplot</span>(correlations, <span class="dt">method=</span><span class="st">&quot;circle&quot;</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-multivariate-5.png" width="672" /></p>
+</div>
+<div id="data-visualizations-projection" class="section level2">
+<h2><span class="header-section-number">2.3</span> Data visualizations projection</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Self Organizing Map (Kohonen)</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(<span class="st">&quot;kohonen&quot;</span>)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># split input and output</span>
+x &lt;-<span class="st"> </span><span class="kw">data.matrix</span>(iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+y &lt;-<span class="st"> </span>iris[,<span class="dv">5</span>]
+<span class="co"># set the random seed for repetable results</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+<span class="co"># create a map of the x values</span>
+iris_map &lt;-<span class="st"> </span><span class="kw">som</span>(x, <span class="dt">grid=</span><span class="kw">somgrid</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="st">&quot;hexagonal&quot;</span>))
+<span class="co"># plot the map</span>
+<span class="kw">plot</span>(iris_map)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-projection-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># </span><span class="al">TODO</span><span class="co"> label the map by class</span>
+
+<span class="co"># Sammons Mapping</span>
+
+<span class="co"># load library</span>
+<span class="kw">library</span>(MASS)
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># remove duplicates</span>
+clean &lt;-<span class="st"> </span><span class="kw">unique</span>(iris)
+<span class="co"># split out numerical inputs</span>
+x &lt;-<span class="st"> </span><span class="kw">data.matrix</span>(clean[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># create a sammon mapping</span>
+mapping &lt;-<span class="st"> </span><span class="kw">sammon</span>(<span class="kw">dist</span>(x))</code></pre></div>
+<pre><code>## Initial stress        : 0.00678
+## stress after  10 iters: 0.00404, magic = 0.500
+## stress after  12 iters: 0.00402</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot mapping by class</span>
+<span class="kw">plot</span>(mapping<span class="op">$</span>points, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(mapping<span class="op">$</span>points, <span class="dt">labels=</span>clean[,<span class="dv">5</span>])</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-projection-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># </span><span class="al">TODO</span><span class="co"> colour dots by class</span>
+<span class="co"># Principal Component Analysis</span>
+
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># separate numerical inputs</span>
+x &lt;-<span class="st"> </span><span class="kw">data.matrix</span>(iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+y &lt;-<span class="st"> </span>iris[,<span class="dv">5</span>]
+<span class="co"># calculate components</span>
+components &lt;-<span class="st"> </span><span class="kw">prcomp</span>(x, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">TRUE</span>)
+<span class="co"># display components</span>
+<span class="kw">print</span>(components)</code></pre></div>
+<pre><code>## Standard deviations (1, .., p=4):
+## [1] 1.7083611 0.9560494 0.3830886 0.1439265
+## 
+## Rotation (n x k) = (4 x 4):
+##                     PC1         PC2        PC3        PC4
+## Sepal.Length  0.5210659 -0.37741762  0.7195664  0.2612863
+## Sepal.Width  -0.2693474 -0.92329566 -0.2443818 -0.1235096
+## Petal.Length  0.5804131 -0.02449161 -0.1421264 -0.8014492
+## Petal.Width   0.5648565 -0.06694199 -0.6342727  0.5235971</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summarize components</span>
+<span class="kw">summary</span>(components)</code></pre></div>
+<pre><code>## Importance of components%s:
+##                           PC1    PC2     PC3     PC4
+## Standard deviation     1.7084 0.9560 0.38309 0.14393
+## Proportion of Variance 0.7296 0.2285 0.03669 0.00518
+## Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the components</span>
+<span class="kw">biplot</span>(components)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-projection-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Andrews Curves</span>
+<span class="co"># load library</span>
+<span class="kw">library</span>(andrews)
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># generate andres curves</span>
+<span class="kw">andrews</span>(iris, <span class="dt">clr=</span><span class="dv">5</span>, <span class="dt">ymax=</span><span class="dv">3</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/data-visualizations-projection-4.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prepare-problem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prepare-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tymenschreuder/project-template-analysis/edit/gh-pages/02-SummarizeData.Rmd",
+"text": "Edit"
+},
+"download": ["project-template-analysis.pdf", "project-template-analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

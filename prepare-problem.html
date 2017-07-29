@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Template Analysis</title>
+  <meta name="description" content="Recipes for Machine Learning Project">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Project Template Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Recipes for Machine Learning Project" />
+  <meta name="github-repo" content="tymenschreuder/project-template-analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Project Template Analysis" />
+  
+  <meta name="twitter:description" content="Recipes for Machine Learning Project" />
+  
+
+<meta name="author" content="Tymen Schreuder">
+
+
+<meta name="date" content="2017-07-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="prepare-problem-1.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Project Template Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction: BLueprint and Recipes for Stats analytic Project</a></li>
+<li class="chapter" data-level="1" data-path="prepare-problem.html"><a href="prepare-problem.html"><i class="fa fa-check"></i><b>1</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="1.1" data-path="prepare-problem.html"><a href="prepare-problem.html#load-packages"><i class="fa fa-check"></i><b>1.1</b> Load packages</a></li>
+<li class="chapter" data-level="1.2" data-path="prepare-problem.html"><a href="prepare-problem.html#load-dataset"><i class="fa fa-check"></i><b>1.2</b> Load dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html"><i class="fa fa-check"></i><b>2</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="2.1" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.1</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-univariate"><i class="fa fa-check"></i><b>2.2</b> Data visualizations Univariate</a></li>
+<li class="chapter" data-level="2.3" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-projection"><i class="fa fa-check"></i><b>2.3</b> Data visualizations projection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prepare-data.html"><a href="prepare-data.html"><i class="fa fa-check"></i><b>3</b> Prepare Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="prepare-data.html"><a href="prepare-data.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="3.2" data-path="prepare-data.html"><a href="prepare-data.html#feature-selection"><i class="fa fa-check"></i><b>3.2</b> Feature Selection</a></li>
+<li class="chapter" data-level="3.3" data-path="prepare-data.html"><a href="prepare-data.html#data-transforms"><i class="fa fa-check"></i><b>3.3</b> Data Transforms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html"><i class="fa fa-check"></i><b>4</b> 04 Evaluate Algorithms</a><ul>
+<li class="chapter" data-level="4.1" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#spot-check-algorithms"><i class="fa fa-check"></i><b>4.1</b> Spot-Check Algorithms</a></li>
+<li class="chapter" data-level="4.2" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-regression"><i class="fa fa-check"></i><b>4.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="4.3" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#penalized-linear-regression"><i class="fa fa-check"></i><b>4.3</b> Penalized Linear Regression</a></li>
+<li class="chapter" data-level="4.4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-classification"><i class="fa fa-check"></i><b>4.4</b> Linear Classification</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#nonlinear-classification"><i class="fa fa-check"></i><b>4.5</b> NonLinear Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="improve-accuracy.html"><a href="improve-accuracy.html"><i class="fa fa-check"></i><b>5</b> 06 Improve Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="improve-accuracy.html"><a href="improve-accuracy.html#metrics"><i class="fa fa-check"></i><b>5.1</b> Metrics</a></li>
+<li class="chapter" data-level="5.2" data-path="improve-accuracy.html"><a href="improve-accuracy.html#resampling-methods"><i class="fa fa-check"></i><b>5.2</b> Resampling Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="improve-accuracy.html"><a href="improve-accuracy.html#model-selection"><i class="fa fa-check"></i><b>5.3</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html"><i class="fa fa-check"></i><b>6</b> Improve Accuracy</a><ul>
+<li class="chapter" data-level="6.1" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#tuning"><i class="fa fa-check"></i><b>6.1</b> Tuning</a></li>
+<li class="chapter" data-level="6.2" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#ensembles"><i class="fa fa-check"></i><b>6.2</b> Ensembles</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/tymenschreuder/project-template-analysis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Project Template Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prepare-problem" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Prepare Problem</h1>
+<div id="load-packages" class="section level2">
+<h2><span class="header-section-number">1.1</span> Load packages</h2>
+</div>
+<div id="load-dataset" class="section level2">
+<h2><span class="header-section-number">1.2</span> Load dataset</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Datasets from the mlbench library</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(mlbench)
+
+<span class="co"># list the contents of the library</span>
+<span class="co">#library(help = &quot;mlbench&quot;)</span>
+
+<span class="co"># Boston Housing dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="kw">dim</span>(BostonHousing)</code></pre></div>
+<pre><code>## [1] 506  14</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(BostonHousing)</code></pre></div>
+<pre><code>##      crim zn indus chas   nox    rm  age    dis rad tax ptratio      b
+## 1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90
+## 2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90
+## 3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83
+## 4 0.03237  0  2.18    0 0.458 6.998 45.8 6.0622   3 222    18.7 394.63
+## 5 0.06905  0  2.18    0 0.458 7.147 54.2 6.0622   3 222    18.7 396.90
+## 6 0.02985  0  2.18    0 0.458 6.430 58.7 6.0622   3 222    18.7 394.12
+##   lstat medv
+## 1  4.98 24.0
+## 2  9.14 21.6
+## 3  4.03 34.7
+## 4  2.94 33.4
+## 5  5.33 36.2
+## 6  5.21 28.7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Wisconsin Breast Cancer dataset</span>
+<span class="kw">data</span>(BreastCancer)
+<span class="kw">dim</span>(BreastCancer)</code></pre></div>
+<pre><code>## [1] 699  11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(BreastCancer<span class="op">$</span>Class)</code></pre></div>
+<pre><code>## [1] &quot;benign&quot;    &quot;malignant&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(BreastCancer)</code></pre></div>
+<pre><code>##        Id Cl.thickness Cell.size Cell.shape Marg.adhesion Epith.c.size
+## 1 1000025            5         1          1             1            2
+## 2 1002945            5         4          4             5            7
+## 3 1015425            3         1          1             1            2
+## 4 1016277            6         8          8             1            3
+## 5 1017023            4         1          1             3            2
+## 6 1017122            8        10         10             8            7
+##   Bare.nuclei Bl.cromatin Normal.nucleoli Mitoses     Class
+## 1           1           3               1       1    benign
+## 2          10           3               2       1    benign
+## 3           2           3               1       1    benign
+## 4           4           3               7       1    benign
+## 5           1           3               1       1    benign
+## 6          10           9               7       1 malignant</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Glass Identification dataset</span>
+<span class="kw">data</span>(Glass)
+<span class="kw">dim</span>(Glass)</code></pre></div>
+<pre><code>## [1] 214  10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Glass<span class="op">$</span>Type)</code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;5&quot; &quot;6&quot; &quot;7&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Glass)</code></pre></div>
+<pre><code>##        RI    Na   Mg   Al    Si    K   Ca Ba   Fe Type
+## 1 1.52101 13.64 4.49 1.10 71.78 0.06 8.75  0 0.00    1
+## 2 1.51761 13.89 3.60 1.36 72.73 0.48 7.83  0 0.00    1
+## 3 1.51618 13.53 3.55 1.54 72.99 0.39 7.78  0 0.00    1
+## 4 1.51766 13.21 3.69 1.29 72.61 0.57 8.22  0 0.00    1
+## 5 1.51742 13.27 3.62 1.24 73.08 0.55 8.07  0 0.00    1
+## 6 1.51596 12.79 3.61 1.62 72.97 0.64 8.07  0 0.26    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Johns Hopkins University Ionosphere dataset</span>
+<span class="kw">data</span>(Ionosphere)
+<span class="kw">dim</span>(Ionosphere)</code></pre></div>
+<pre><code>## [1] 351  35</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Ionosphere<span class="op">$</span>Class)</code></pre></div>
+<pre><code>## [1] &quot;bad&quot;  &quot;good&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Ionosphere)</code></pre></div>
+<pre><code>##   V1 V2      V3       V4       V5       V6       V7       V8      V9
+## 1  1  0 0.99539 -0.05889  0.85243  0.02306  0.83398 -0.37708 1.00000
+## 2  1  0 1.00000 -0.18829  0.93035 -0.36156 -0.10868 -0.93597 1.00000
+## 3  1  0 1.00000 -0.03365  1.00000  0.00485  1.00000 -0.12062 0.88965
+## 4  1  0 1.00000 -0.45161  1.00000  1.00000  0.71216 -1.00000 0.00000
+## 5  1  0 1.00000 -0.02401  0.94140  0.06531  0.92106 -0.23255 0.77152
+## 6  1  0 0.02337 -0.00592 -0.09924 -0.11949 -0.00763 -0.11824 0.14706
+##        V10     V11      V12     V13      V14      V15      V16      V17
+## 1  0.03760 0.85243 -0.17755 0.59755 -0.44945  0.60536 -0.38223  0.84356
+## 2 -0.04549 0.50874 -0.67743 0.34432 -0.69707 -0.51685 -0.97515  0.05499
+## 3  0.01198 0.73082  0.05346 0.85443  0.00827  0.54591  0.00299  0.83775
+## 4  0.00000 0.00000  0.00000 0.00000  0.00000 -1.00000  0.14516  0.54094
+## 5 -0.16399 0.52798 -0.20275 0.56409 -0.00712  0.34395 -0.27457  0.52940
+## 6  0.06637 0.03786 -0.06302 0.00000  0.00000 -0.04572 -0.15540 -0.00343
+##        V18      V19      V20      V21      V22      V23      V24      V25
+## 1 -0.38542  0.58212 -0.32192  0.56971 -0.29674  0.36946 -0.47357  0.56811
+## 2 -0.62237  0.33109 -1.00000 -0.13151 -0.45300 -0.18056 -0.35734 -0.20332
+## 3 -0.13644  0.75535 -0.08540  0.70887 -0.27502  0.43385 -0.12062  0.57528
+## 4 -0.39330 -1.00000 -0.54467 -0.69975  1.00000  0.00000  0.00000  1.00000
+## 5 -0.21780  0.45107 -0.17813  0.05982 -0.35575  0.02309 -0.52879  0.03286
+## 6 -0.10196 -0.11575 -0.05414  0.01838  0.03669  0.01519  0.00888  0.03513
+##        V26      V27      V28      V29      V30      V31      V32      V33
+## 1 -0.51171  0.41078 -0.46168  0.21266 -0.34090  0.42267 -0.54487  0.18641
+## 2 -0.26569 -0.20468 -0.18401 -0.19040 -0.11593 -0.16626 -0.06288 -0.13738
+## 3 -0.40220  0.58984 -0.22145  0.43100 -0.17365  0.60436 -0.24180  0.56045
+## 4  0.90695  0.51613  1.00000  1.00000 -0.20099  0.25682  1.00000 -0.32382
+## 5 -0.65158  0.13290 -0.53206  0.02431 -0.62197 -0.05707 -0.59573 -0.04608
+## 6 -0.01535 -0.03240  0.09223 -0.07859  0.00732  0.00000  0.00000 -0.00039
+##        V34 Class
+## 1 -0.45300  good
+## 2 -0.02447   bad
+## 3 -0.38238  good
+## 4  1.00000   bad
+## 5 -0.65697  good
+## 6  0.12011   bad</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Pima Indians Diabetes dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="kw">dim</span>(PimaIndiansDiabetes)</code></pre></div>
+<pre><code>## [1] 768   9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>## [1] &quot;neg&quot; &quot;pos&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(PimaIndiansDiabetes)</code></pre></div>
+<pre><code>##   pregnant glucose pressure triceps insulin mass pedigree age diabetes
+## 1        6     148       72      35       0 33.6    0.627  50      pos
+## 2        1      85       66      29       0 26.6    0.351  31      neg
+## 3        8     183       64       0       0 23.3    0.672  32      pos
+## 4        1      89       66      23      94 28.1    0.167  21      neg
+## 5        0     137       40      35     168 43.1    2.288  33      pos
+## 6        5     116       74       0       0 25.6    0.201  30      neg</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sonar, Mines vs. Rocks dataset</span>
+<span class="kw">data</span>(Sonar)
+<span class="kw">dim</span>(Sonar)</code></pre></div>
+<pre><code>## [1] 208  61</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Sonar<span class="op">$</span>Class)</code></pre></div>
+<pre><code>## [1] &quot;M&quot; &quot;R&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Sonar)</code></pre></div>
+<pre><code>##       V1     V2     V3     V4     V5     V6     V7     V8     V9    V10
+## 1 0.0200 0.0371 0.0428 0.0207 0.0954 0.0986 0.1539 0.1601 0.3109 0.2111
+## 2 0.0453 0.0523 0.0843 0.0689 0.1183 0.2583 0.2156 0.3481 0.3337 0.2872
+## 3 0.0262 0.0582 0.1099 0.1083 0.0974 0.2280 0.2431 0.3771 0.5598 0.6194
+## 4 0.0100 0.0171 0.0623 0.0205 0.0205 0.0368 0.1098 0.1276 0.0598 0.1264
+## 5 0.0762 0.0666 0.0481 0.0394 0.0590 0.0649 0.1209 0.2467 0.3564 0.4459
+## 6 0.0286 0.0453 0.0277 0.0174 0.0384 0.0990 0.1201 0.1833 0.2105 0.3039
+##      V11    V12    V13    V14    V15    V16    V17    V18    V19    V20
+## 1 0.1609 0.1582 0.2238 0.0645 0.0660 0.2273 0.3100 0.2999 0.5078 0.4797
+## 2 0.4918 0.6552 0.6919 0.7797 0.7464 0.9444 1.0000 0.8874 0.8024 0.7818
+## 3 0.6333 0.7060 0.5544 0.5320 0.6479 0.6931 0.6759 0.7551 0.8929 0.8619
+## 4 0.0881 0.1992 0.0184 0.2261 0.1729 0.2131 0.0693 0.2281 0.4060 0.3973
+## 5 0.4152 0.3952 0.4256 0.4135 0.4528 0.5326 0.7306 0.6193 0.2032 0.4636
+## 6 0.2988 0.4250 0.6343 0.8198 1.0000 0.9988 0.9508 0.9025 0.7234 0.5122
+##      V21    V22    V23    V24    V25    V26    V27    V28    V29    V30
+## 1 0.5783 0.5071 0.4328 0.5550 0.6711 0.6415 0.7104 0.8080 0.6791 0.3857
+## 2 0.5212 0.4052 0.3957 0.3914 0.3250 0.3200 0.3271 0.2767 0.4423 0.2028
+## 3 0.7974 0.6737 0.4293 0.3648 0.5331 0.2413 0.5070 0.8533 0.6036 0.8514
+## 4 0.2741 0.3690 0.5556 0.4846 0.3140 0.5334 0.5256 0.2520 0.2090 0.3559
+## 5 0.4148 0.4292 0.5730 0.5399 0.3161 0.2285 0.6995 1.0000 0.7262 0.4724
+## 6 0.2074 0.3985 0.5890 0.2872 0.2043 0.5782 0.5389 0.3750 0.3411 0.5067
+##      V31    V32    V33    V34    V35    V36    V37    V38    V39    V40
+## 1 0.1307 0.2604 0.5121 0.7547 0.8537 0.8507 0.6692 0.6097 0.4943 0.2744
+## 2 0.3788 0.2947 0.1984 0.2341 0.1306 0.4182 0.3835 0.1057 0.1840 0.1970
+## 3 0.8512 0.5045 0.1862 0.2709 0.4232 0.3043 0.6116 0.6756 0.5375 0.4719
+## 4 0.6260 0.7340 0.6120 0.3497 0.3953 0.3012 0.5408 0.8814 0.9857 0.9167
+## 5 0.5103 0.5459 0.2881 0.0981 0.1951 0.4181 0.4604 0.3217 0.2828 0.2430
+## 6 0.5580 0.4778 0.3299 0.2198 0.1407 0.2856 0.3807 0.4158 0.4054 0.3296
+##      V41    V42    V43    V44    V45    V46    V47    V48    V49    V50
+## 1 0.0510 0.2834 0.2825 0.4256 0.2641 0.1386 0.1051 0.1343 0.0383 0.0324
+## 2 0.1674 0.0583 0.1401 0.1628 0.0621 0.0203 0.0530 0.0742 0.0409 0.0061
+## 3 0.4647 0.2587 0.2129 0.2222 0.2111 0.0176 0.1348 0.0744 0.0130 0.0106
+## 4 0.6121 0.5006 0.3210 0.3202 0.4295 0.3654 0.2655 0.1576 0.0681 0.0294
+## 5 0.1979 0.2444 0.1847 0.0841 0.0692 0.0528 0.0357 0.0085 0.0230 0.0046
+## 6 0.2707 0.2650 0.0723 0.1238 0.1192 0.1089 0.0623 0.0494 0.0264 0.0081
+##      V51    V52    V53    V54    V55    V56    V57    V58    V59    V60
+## 1 0.0232 0.0027 0.0065 0.0159 0.0072 0.0167 0.0180 0.0084 0.0090 0.0032
+## 2 0.0125 0.0084 0.0089 0.0048 0.0094 0.0191 0.0140 0.0049 0.0052 0.0044
+## 3 0.0033 0.0232 0.0166 0.0095 0.0180 0.0244 0.0316 0.0164 0.0095 0.0078
+## 4 0.0241 0.0121 0.0036 0.0150 0.0085 0.0073 0.0050 0.0044 0.0040 0.0117
+## 5 0.0156 0.0031 0.0054 0.0105 0.0110 0.0015 0.0072 0.0048 0.0107 0.0094
+## 6 0.0104 0.0045 0.0014 0.0038 0.0013 0.0089 0.0057 0.0027 0.0051 0.0062
+##   Class
+## 1     R
+## 2     R
+## 3     R
+## 4     R
+## 5     R
+## 6     R</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Soybean dataset</span>
+<span class="kw">data</span>(Soybean)
+<span class="kw">dim</span>(Soybean)</code></pre></div>
+<pre><code>## [1] 683  36</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Soybean<span class="op">$</span>Class)</code></pre></div>
+<pre><code>##  [1] &quot;2-4-d-injury&quot;                &quot;alternarialeaf-spot&quot;        
+##  [3] &quot;anthracnose&quot;                 &quot;bacterial-blight&quot;           
+##  [5] &quot;bacterial-pustule&quot;           &quot;brown-spot&quot;                 
+##  [7] &quot;brown-stem-rot&quot;              &quot;charcoal-rot&quot;               
+##  [9] &quot;cyst-nematode&quot;               &quot;diaporthe-pod-&amp;-stem-blight&quot;
+## [11] &quot;diaporthe-stem-canker&quot;       &quot;downy-mildew&quot;               
+## [13] &quot;frog-eye-leaf-spot&quot;          &quot;herbicide-injury&quot;           
+## [15] &quot;phyllosticta-leaf-spot&quot;      &quot;phytophthora-rot&quot;           
+## [17] &quot;powdery-mildew&quot;              &quot;purple-seed-stain&quot;          
+## [19] &quot;rhizoctonia-root-rot&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Soybean)</code></pre></div>
+<pre><code>##                   Class date plant.stand precip temp hail crop.hist
+## 1 diaporthe-stem-canker    6           0      2    1    0         1
+## 2 diaporthe-stem-canker    4           0      2    1    0         2
+## 3 diaporthe-stem-canker    3           0      2    1    0         1
+## 4 diaporthe-stem-canker    3           0      2    1    0         1
+## 5 diaporthe-stem-canker    6           0      2    1    0         2
+## 6 diaporthe-stem-canker    5           0      2    1    0         3
+##   area.dam sever seed.tmt germ plant.growth leaves leaf.halo leaf.marg
+## 1        1     1        0    0            1      1         0         2
+## 2        0     2        1    1            1      1         0         2
+## 3        0     2        1    2            1      1         0         2
+## 4        0     2        0    1            1      1         0         2
+## 5        0     1        0    2            1      1         0         2
+## 6        0     1        0    1            1      1         0         2
+##   leaf.size leaf.shread leaf.malf leaf.mild stem lodging stem.cankers
+## 1         2           0         0         0    1       1            3
+## 2         2           0         0         0    1       0            3
+## 3         2           0         0         0    1       0            3
+## 4         2           0         0         0    1       0            3
+## 5         2           0         0         0    1       0            3
+## 6         2           0         0         0    1       0            3
+##   canker.lesion fruiting.bodies ext.decay mycelium int.discolor sclerotia
+## 1             1               1         1        0            0         0
+## 2             1               1         1        0            0         0
+## 3             0               1         1        0            0         0
+## 4             0               1         1        0            0         0
+## 5             1               1         1        0            0         0
+## 6             0               1         1        0            0         0
+##   fruit.pods fruit.spots seed mold.growth seed.discolor seed.size
+## 1          0           4    0           0             0         0
+## 2          0           4    0           0             0         0
+## 3          0           4    0           0             0         0
+## 4          0           4    0           0             0         0
+## 5          0           4    0           0             0         0
+## 6          0           4    0           0             0         0
+##   shriveling roots
+## 1          0     0
+## 2          0     0
+## 3          0     0
+## 4          0     0
+## 5          0     0
+## 6          0     0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#</span>
+<span class="co"># Datasets from the AppliedPredictiveModeling library</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(AppliedPredictiveModeling)
+
+<span class="co"># list the contents of the library</span>
+<span class="co">#library(help = &quot;AppliedPredictiveModeling&quot;)</span>
+
+<span class="co"># Abalone Data</span>
+<span class="kw">data</span>(abalone)
+<span class="kw">dim</span>(abalone)</code></pre></div>
+<pre><code>## [1] 4177    9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(abalone)</code></pre></div>
+<pre><code>##   Type LongestShell Diameter Height WholeWeight ShuckedWeight
+## 1    M        0.455    0.365  0.095      0.5140        0.2245
+## 2    M        0.350    0.265  0.090      0.2255        0.0995
+## 3    F        0.530    0.420  0.135      0.6770        0.2565
+## 4    M        0.440    0.365  0.125      0.5160        0.2155
+## 5    I        0.330    0.255  0.080      0.2050        0.0895
+## 6    I        0.425    0.300  0.095      0.3515        0.1410
+##   VisceraWeight ShellWeight Rings
+## 1        0.1010       0.150    15
+## 2        0.0485       0.070     7
+## 3        0.1415       0.210     9
+## 4        0.1140       0.155    10
+## 5        0.0395       0.055     7
+## 6        0.0775       0.120     8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Datasets from the dataset library</span>
+
+<span class="co"># list the contents of the library</span>
+<span class="co">#library(help = &quot;datasets&quot;)</span>
+<span class="kw">library</span>(datasets)
+<span class="co"># list all available datasets in all loaded libraries</span>
+
+
+<span class="co"># Iris flowers datasets</span>
+<span class="kw">data</span>(iris)
+<span class="kw">dim</span>(iris)</code></pre></div>
+<pre><code>## [1] 150   5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>## [1] &quot;setosa&quot;     &quot;versicolor&quot; &quot;virginica&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(iris)</code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Longley&#39;s Economic Regression Data</span>
+<span class="kw">data</span>(longley)
+<span class="kw">dim</span>(longley)</code></pre></div>
+<pre><code>## [1] 16  7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(longley)</code></pre></div>
+<pre><code>##      GNP.deflator     GNP Unemployed Armed.Forces Population Year Employed
+## 1947         83.0 234.289      235.6        159.0    107.608 1947   60.323
+## 1948         88.5 259.426      232.5        145.6    108.632 1948   61.122
+## 1949         88.2 258.054      368.2        161.6    109.773 1949   60.171
+## 1950         89.5 284.599      335.1        165.0    110.929 1950   61.187
+## 1951         96.2 328.975      209.9        309.9    112.075 1951   63.221
+## 1952         98.1 346.999      193.2        359.4    113.270 1952   63.639</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data from a CSV file in the local directory</span>
+<span class="co"># define the filename</span>
+<span class="co"># filename &lt;- &quot;/Users/tymen/RHome/machine_learning_mastery_with_r/code/1-AnalyzeData/1-LoadData/iris.csv&quot;</span>
+<span class="co"># # load the CSV file from the local directory</span>
+<span class="co"># dataset &lt;- read_csv(filename)</span>
+<span class="co"># preview the first 5 rows</span>
+<span class="co">#head(dataset)</span>
+
+<span class="co"># Load CSV From a URL</span>
+<span class="co"># urlfile &lt;-&#39;http://www.sigkdd.org/kddcup/index.php?section=1998&amp;method=data&#39;</span>
+<span class="co"># downloaded &lt;- getURL(urlfile, ssl.verifypeer=FALSE)</span>
+<span class="co"># connection &lt;- textConnection(downloaded)</span>
+<span class="co"># dataset &lt;- read_csv(connection)</span>
+<span class="co"># head(dataset)</span>
+<span class="co"># load the library</span>
+<span class="kw">library</span>(RCurl)
+<span class="co"># specify the URL for the Iris data CSV</span>
+urlfile &lt;-<span class="st">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
+<span class="co"># download the file</span>
+downloaded &lt;-<span class="st"> </span><span class="kw">getURL</span>(urlfile, <span class="dt">ssl.verifypeer=</span><span class="ot">FALSE</span>)
+<span class="co"># treat the text data as a steam so we can read from it</span>
+connection &lt;-<span class="st"> </span><span class="kw">textConnection</span>(downloaded)
+<span class="co"># parse the downloaded data as CSV</span>
+dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(connection, <span class="dt">header=</span><span class="ot">FALSE</span>)
+<span class="co"># preview the first 5 rows</span>
+<span class="kw">head</span>(dataset)</code></pre></div>
+<pre><code>##    V1  V2  V3  V4          V5
+## 1 5.1 3.5 1.4 0.2 Iris-setosa
+## 2 4.9 3.0 1.4 0.2 Iris-setosa
+## 3 4.7 3.2 1.3 0.2 Iris-setosa
+## 4 4.6 3.1 1.5 0.2 Iris-setosa
+## 5 5.0 3.6 1.4 0.2 Iris-setosa
+## 6 5.4 3.9 1.7 0.4 Iris-setosa</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prepare-problem-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tymenschreuder/project-template-analysis/edit/gh-pages/01-PepareProject.Rmd",
+"text": "Edit"
+},
+"download": ["project-template-analysis.pdf", "project-template-analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Template Analysis</title>
+  <meta name="description" content="Recipes for Machine Learning Project">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Project Template Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Recipes for Machine Learning Project" />
+  <meta name="github-repo" content="tymenschreuder/project-template-analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Project Template Analysis" />
+  
+  <meta name="twitter:description" content="Recipes for Machine Learning Project" />
+  
+
+<meta name="author" content="Tymen Schreuder">
+
+
+<meta name="date" content="2017-07-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="improve-accuracy.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Project Template Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction: BLueprint and Recipes for Stats analytic Project</a></li>
+<li class="chapter" data-level="1" data-path="prepare-problem.html"><a href="prepare-problem.html"><i class="fa fa-check"></i><b>1</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="1.1" data-path="prepare-problem.html"><a href="prepare-problem.html#load-packages"><i class="fa fa-check"></i><b>1.1</b> Load packages</a></li>
+<li class="chapter" data-level="1.2" data-path="prepare-problem.html"><a href="prepare-problem.html#load-dataset"><i class="fa fa-check"></i><b>1.2</b> Load dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html"><i class="fa fa-check"></i><b>2</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="2.1" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.1</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-univariate"><i class="fa fa-check"></i><b>2.2</b> Data visualizations Univariate</a></li>
+<li class="chapter" data-level="2.3" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-projection"><i class="fa fa-check"></i><b>2.3</b> Data visualizations projection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prepare-data.html"><a href="prepare-data.html"><i class="fa fa-check"></i><b>3</b> Prepare Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="prepare-data.html"><a href="prepare-data.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="3.2" data-path="prepare-data.html"><a href="prepare-data.html#feature-selection"><i class="fa fa-check"></i><b>3.2</b> Feature Selection</a></li>
+<li class="chapter" data-level="3.3" data-path="prepare-data.html"><a href="prepare-data.html#data-transforms"><i class="fa fa-check"></i><b>3.3</b> Data Transforms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html"><i class="fa fa-check"></i><b>4</b> 04 Evaluate Algorithms</a><ul>
+<li class="chapter" data-level="4.1" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#spot-check-algorithms"><i class="fa fa-check"></i><b>4.1</b> Spot-Check Algorithms</a></li>
+<li class="chapter" data-level="4.2" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-regression"><i class="fa fa-check"></i><b>4.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="4.3" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#penalized-linear-regression"><i class="fa fa-check"></i><b>4.3</b> Penalized Linear Regression</a></li>
+<li class="chapter" data-level="4.4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-classification"><i class="fa fa-check"></i><b>4.4</b> Linear Classification</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#nonlinear-classification"><i class="fa fa-check"></i><b>4.5</b> NonLinear Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="improve-accuracy.html"><a href="improve-accuracy.html"><i class="fa fa-check"></i><b>5</b> 06 Improve Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="improve-accuracy.html"><a href="improve-accuracy.html#metrics"><i class="fa fa-check"></i><b>5.1</b> Metrics</a></li>
+<li class="chapter" data-level="5.2" data-path="improve-accuracy.html"><a href="improve-accuracy.html#resampling-methods"><i class="fa fa-check"></i><b>5.2</b> Resampling Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="improve-accuracy.html"><a href="improve-accuracy.html#model-selection"><i class="fa fa-check"></i><b>5.3</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html"><i class="fa fa-check"></i><b>6</b> Improve Accuracy</a><ul>
+<li class="chapter" data-level="6.1" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#tuning"><i class="fa fa-check"></i><b>6.1</b> Tuning</a></li>
+<li class="chapter" data-level="6.2" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#ensembles"><i class="fa fa-check"></i><b>6.2</b> Ensembles</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/tymenschreuder/project-template-analysis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Project Template Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="improve-accuracy-1" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Improve Accuracy</h1>
+<div id="tuning" class="section level2">
+<h2><span class="header-section-number">6.1</span> Tuning</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Randomly search algorithm parameters</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>, <span class="dt">search=</span><span class="st">&quot;random&quot;</span>)
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">method=</span><span class="st">&quot;lvq&quot;</span>, <span class="dt">trControl=</span>control, <span class="dt">tuneLength=</span><span class="dv">25</span>)
+<span class="co"># summarize the model</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Learning Vector Quantization 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 135, 135, 135, 135, 135, 135, ... 
+## Resampling results across tuning parameters:
+## 
+##   size  k    Accuracy   Kappa     
+##    5     15  0.9511111  0.92666667
+##    5     37  0.9333333  0.90000000
+##    5     57  0.9355556  0.90333333
+##    5     70  0.9488889  0.92333333
+##    5     96  0.6666667  0.50000000
+##    5     98  0.6666667  0.50000000
+##    6      5  0.9444444  0.91666667
+##    6     34  0.9422222  0.91333333
+##    6     38  0.9466667  0.92000000
+##    6     87  0.9400000  0.91000000
+##    6    136  0.3333333  0.00000000
+##    7     14  0.9511111  0.92666667
+##    7     24  0.9511111  0.92666667
+##    7     29  0.9466667  0.92000000
+##    7     52  0.9466667  0.92000000
+##    7     72  0.9422222  0.91333333
+##    8     74  0.9466667  0.92000000
+##    8     92  0.6666667  0.50000000
+##    8    128  0.3333333  0.00000000
+##    9     62  0.9488889  0.92333333
+##   10      8  0.9622222  0.94333333
+##   10    102  0.3444444  0.01666667
+##   10    105  0.3333333  0.00000000
+##   10    107  0.3333333  0.00000000
+##   10    125  0.3333333  0.00000000
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were size = 10 and k = 8.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the effect of parameters on accuracy</span>
+<span class="kw">plot</span>(model)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/tuning-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tune algorithm parameters using an automatic grid search.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">method=</span><span class="st">&quot;lvq&quot;</span>, <span class="dt">trControl=</span>control, <span class="dt">tuneLength=</span><span class="dv">5</span>)
+<span class="co"># summarize the model</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Learning Vector Quantization 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 135, 135, 135, 135, 135, 135, ... 
+## Resampling results across tuning parameters:
+## 
+##   size  k   Accuracy   Kappa    
+##    5     1  0.9577778  0.9366667
+##    5     6  0.9488889  0.9233333
+##    5    11  0.9577778  0.9366667
+##    5    16  0.9355556  0.9033333
+##    5    21  0.9333333  0.9000000
+##    6     1  0.9444444  0.9166667
+##    6     6  0.9400000  0.9100000
+##    6    11  0.9355556  0.9033333
+##    6    16  0.9333333  0.9000000
+##    6    21  0.9355556  0.9033333
+##    7     1  0.9333333  0.9000000
+##    7     6  0.9444444  0.9166667
+##    7    11  0.9355556  0.9033333
+##    7    16  0.9400000  0.9100000
+##    7    21  0.9533333  0.9300000
+##    8     1  0.9644444  0.9466667
+##    8     6  0.9644444  0.9466667
+##    8    11  0.9644444  0.9466667
+##    8    16  0.9600000  0.9400000
+##    8    21  0.9466667  0.9200000
+##   10     1  0.9666667  0.9500000
+##   10     6  0.9511111  0.9266667
+##   10    11  0.9666667  0.9500000
+##   10    16  0.9511111  0.9266667
+##   10    21  0.9511111  0.9266667
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were size = 10 and k = 11.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the effect of parameters on accuracy</span>
+<span class="kw">plot</span>(model)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/tuning-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Select the best tuning configuration</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+tunegrid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">.cp=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="dt">by=</span><span class="fl">0.01</span>))
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">tuneGrid=</span>tunegrid, <span class="dt">trControl=</span>control)
+<span class="co"># display the best configuration</span>
+<span class="kw">print</span>(fit.cart<span class="op">$</span>bestTune)</code></pre></div>
+<pre><code>##     cp
+## 5 0.04</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Customer Parameter Search</span>
+
+<span class="co"># load the packages</span>
+<span class="kw">library</span>(randomForest)
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># configure multi-core (not supported on Windoews)</span>
+<span class="kw">library</span>(doMC)
+<span class="kw">registerDoMC</span>(<span class="dt">cores=</span><span class="dv">8</span>)
+
+<span class="co"># define the custom caret algorithm (wrapper for Random Forest)</span>
+customRF &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">type=</span><span class="st">&quot;Classification&quot;</span>, <span class="dt">library=</span><span class="st">&quot;randomForest&quot;</span>, <span class="dt">loop=</span><span class="ot">NULL</span>)
+customRF<span class="op">$</span>parameters &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">parameter=</span><span class="kw">c</span>(<span class="st">&quot;mtry&quot;</span>, <span class="st">&quot;ntree&quot;</span>), <span class="dt">class=</span><span class="kw">rep</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dv">2</span>), <span class="dt">label=</span><span class="kw">c</span>(<span class="st">&quot;mtry&quot;</span>, <span class="st">&quot;ntree&quot;</span>))
+customRF<span class="op">$</span>grid &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, <span class="dt">len=</span><span class="ot">NULL</span>, <span class="dt">search=</span><span class="st">&quot;grid&quot;</span>) {}
+customRF<span class="op">$</span>fit &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, wts, param, lev, last, weights, classProbs, ...) {
+  <span class="kw">randomForest</span>(x, y, <span class="dt">mtry=</span>param<span class="op">$</span>mtry, <span class="dt">ntree=</span>param<span class="op">$</span>ntree, ...)
+}
+customRF<span class="op">$</span>predict &lt;-<span class="st"> </span><span class="cf">function</span>(modelFit, newdata, <span class="dt">preProc=</span><span class="ot">NULL</span>, <span class="dt">submodels=</span><span class="ot">NULL</span>)
+   <span class="kw">predict</span>(modelFit, newdata)
+customRF<span class="op">$</span>prob &lt;-<span class="st"> </span><span class="cf">function</span>(modelFit, newdata, <span class="dt">preProc=</span><span class="ot">NULL</span>, <span class="dt">submodels=</span><span class="ot">NULL</span>)
+   <span class="kw">predict</span>(modelFit, newdata, <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>)
+customRF<span class="op">$</span>sort &lt;-<span class="st"> </span><span class="cf">function</span>(x) x[<span class="kw">order</span>(x[,<span class="dv">1</span>]),]
+customRF<span class="op">$</span>levels &lt;-<span class="st"> </span><span class="cf">function</span>(x) x<span class="op">$</span>classes
+
+<span class="co"># Load Dataset</span>
+<span class="kw">data</span>(Sonar)
+dataset &lt;-<span class="st"> </span>Sonar
+seed &lt;-<span class="st"> </span><span class="dv">7</span>
+metric &lt;-<span class="st"> &quot;Accuracy&quot;</span>
+
+<span class="co"># train model</span>
+trainControl &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+tunegrid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">.mtry=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>), <span class="dt">.ntree=</span><span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>, <span class="dv">2500</span>))
+<span class="kw">set.seed</span>(seed)
+custom &lt;-<span class="st"> </span><span class="kw">train</span>(Class<span class="op">~</span>., <span class="dt">data=</span>dataset, <span class="dt">method=</span>customRF, <span class="dt">metric=</span>metric, <span class="dt">tuneGrid=</span>tunegrid, <span class="dt">trControl=</span>trainControl)
+<span class="kw">print</span>(custom)</code></pre></div>
+<pre><code>## 208 samples
+##  60 predictor
+##   2 classes: &#39;M&#39;, &#39;R&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 187, 188, 188, 187, 187, 187, ... 
+## Resampling results across tuning parameters:
+## 
+##   mtry  ntree  Accuracy   Kappa    
+##    1    1000   0.8378860  0.6693068
+##    1    1500   0.8314574  0.6567188
+##    1    2000   0.8394012  0.6723757
+##    1    2500   0.8345599  0.6624305
+##    2    1000   0.8378139  0.6698793
+##    2    1500   0.8459091  0.6854461
+##    2    2000   0.8427345  0.6792114
+##    2    2500   0.8492352  0.6927712
+##    3    1000   0.8395527  0.6736726
+##    3    1500   0.8334343  0.6604164
+##    3    2000   0.8362266  0.6661627
+##    3    2500   0.8298773  0.6533552
+##    4    1000   0.8254185  0.6443563
+##    4    1500   0.8267027  0.6475804
+##    4    2000   0.8331962  0.6601512
+##    4    2500   0.8331241  0.6601224
+##    5    1000   0.8282107  0.6507048
+##    5    1500   0.8235931  0.6406093
+##    5    2000   0.8235209  0.6408543
+##    5    2500   0.8155844  0.6240125
+##    6    1000   0.8218543  0.6377897
+##    6    1500   0.8153463  0.6236070
+##    6    2000   0.8236003  0.6404547
+##    6    2500   0.8219336  0.6375842
+##    7    1000   0.8186003  0.6305917
+##    7    1500   0.8233622  0.6396018
+##    7    2000   0.8153463  0.6234899
+##    7    2500   0.8281241  0.6491065
+##    8    1000   0.8204113  0.6340540
+##    8    1500   0.8250289  0.6431140
+##    8    2000   0.8250361  0.6436154
+##    8    2500   0.8203463  0.6339480
+##    9    1000   0.8283622  0.6503540
+##    9    1500   0.8252597  0.6445064
+##    9    2000   0.8170996  0.6274325
+##    9    2500   0.8203391  0.6334506
+##   10    1000   0.8233622  0.6398523
+##   10    1500   0.8202670  0.6337966
+##   10    2000   0.8170202  0.6274176
+##   10    2500   0.8218543  0.6366811
+##   11    1000   0.8203463  0.6340067
+##   11    1500   0.8170058  0.6268416
+##   11    2000   0.8122439  0.6171392
+##   11    2500   0.8187518  0.6306184
+##   12    1000   0.8186724  0.6306219
+##   12    1500   0.8121645  0.6174541
+##   12    2000   0.8157287  0.6240841
+##   12    2500   0.8138312  0.6202156
+##   13    1000   0.8157359  0.6247596
+##   13    1500   0.8123954  0.6178441
+##   13    2000   0.8220058  0.6373383
+##   13    2500   0.8156494  0.6239558
+##   14    1000   0.8121717  0.6169495
+##   14    1500   0.8059740  0.6039901
+##   14    2000   0.8154978  0.6242557
+##   14    2500   0.8171717  0.6281273
+##   15    1000   0.8108947  0.6150481
+##   15    1500   0.8138312  0.6202945
+##   15    2000   0.8125613  0.6181653
+##   15    2500   0.8155772  0.6239136
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were mtry = 2 and ntree = 2500.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(custom)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/tuning-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tune algorithm parameters using a manual grid search.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># design the parameter tuning grid</span>
+grid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">size=</span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">50</span>), <span class="dt">k=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">method=</span><span class="st">&quot;lvq&quot;</span>, <span class="dt">trControl=</span>control, <span class="dt">tuneGrid=</span>grid)
+<span class="co"># summarize the model</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Learning Vector Quantization 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 135, 135, 135, 135, 135, 135, ... 
+## Resampling results across tuning parameters:
+## 
+##   size  k  Accuracy   Kappa    
+##    5    1  0.9444444  0.9166667
+##    5    2  0.9511111  0.9266667
+##    5    3  0.9355556  0.9033333
+##    5    4  0.9400000  0.9100000
+##    5    5  0.9600000  0.9400000
+##   10    1  0.9688889  0.9533333
+##   10    2  0.9622222  0.9433333
+##   10    3  0.9511111  0.9266667
+##   10    4  0.9666667  0.9500000
+##   10    5  0.9555556  0.9333333
+##   20    1  0.9644444  0.9466667
+##   20    2  0.9622222  0.9433333
+##   20    3  0.9711111  0.9566667
+##   20    4  0.9600000  0.9400000
+##   20    5  0.9622222  0.9433333
+##   50    1  0.9666667  0.9500000
+##   50    2  0.9644444  0.9466667
+##   50    3  0.9600000  0.9400000
+##   50    4  0.9688889  0.9533333
+##   50    5  0.9600000  0.9400000
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were size = 20 and k = 3.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the effect of parameters on accuracy</span>
+<span class="kw">plot</span>(model)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/tuning-4.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Manually search parametres</span>
+
+<span class="co"># load the packages</span>
+<span class="kw">library</span>(randomForest)
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># Load Dataset</span>
+<span class="kw">data</span>(Sonar)
+dataset &lt;-<span class="st"> </span>Sonar
+x &lt;-<span class="st"> </span>dataset[,<span class="dv">1</span><span class="op">:</span><span class="dv">60</span>]
+y &lt;-<span class="st"> </span>dataset[,<span class="dv">61</span>]
+seed &lt;-<span class="st"> </span><span class="dv">7</span>
+metric &lt;-<span class="st"> &quot;Accuracy&quot;</span>
+<span class="co"># Manual Search</span>
+trainControl &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>, <span class="dt">search=</span><span class="st">&quot;grid&quot;</span>)
+tunegrid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">.mtry=</span><span class="kw">c</span>(<span class="kw">sqrt</span>(<span class="kw">ncol</span>(x))))
+modellist &lt;-<span class="st"> </span><span class="kw">list</span>()
+<span class="cf">for</span> (ntree <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>, <span class="dv">2500</span>)) {
+    <span class="kw">set.seed</span>(seed)
+    fit &lt;-<span class="st"> </span><span class="kw">train</span>(Class<span class="op">~</span>., <span class="dt">data=</span>dataset, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">metric=</span>metric, <span class="dt">tuneGrid=</span>tunegrid, <span class="dt">trControl=</span>trainControl, <span class="dt">ntree=</span>ntree)
+    key &lt;-<span class="st"> </span><span class="kw">toString</span>(ntree)
+    modellist[[key]] &lt;-<span class="st"> </span>fit
+}
+<span class="co"># compare results</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(modellist)
+<span class="kw">summary</span>(results)</code></pre></div>
+<pre><code>## 
+## Call:
+## summary.resamples(object = results)
+## 
+## Models: 1000, 1500, 2000, 2500 
+## Number of resamples: 30 
+## 
+## Accuracy 
+##           Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA&#39;s
+## 1000 0.6190476 0.8095238 0.8340909 0.8267821 0.8892857 0.9090909    0
+## 1500 0.6000000 0.8000000 0.8095238 0.8202670 0.8892857 0.9090909    0
+## 2000 0.6000000 0.8000000 0.8095238 0.8234416 0.9000000 0.9090909    0
+## 2500 0.6000000 0.8000000 0.8095238 0.8186003 0.8571429 0.9090909    0
+## 
+## Kappa 
+##           Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA&#39;s
+## 1000 0.2222222 0.6111111 0.6573093 0.6475562 0.7740939 0.8166667    0
+## 1500 0.1397849 0.5876289 0.6164304 0.6335420 0.7740939 0.8166667    0
+## 2000 0.1397849 0.5811177 0.6164304 0.6403175 0.7979798 0.8166667    0
+## 2500 0.1397849 0.5811177 0.6164304 0.6303666 0.7149321 0.8166667    0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotplot</span>(results)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/tuning-5.png" width="672" /></p>
+</div>
+<div id="ensembles" class="section level2">
+<h2><span class="header-section-number">6.2</span> Ensembles</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stacking (non-linear combination of models)</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(caretEnsemble)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">savePredictions=</span><span class="ot">TRUE</span>, <span class="dt">classProbs=</span><span class="ot">TRUE</span>)
+<span class="co"># train a list of models</span>
+methodList &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;glm&#39;</span>, <span class="st">&#39;lda&#39;</span>, <span class="st">&#39;knn&#39;</span>)
+models &lt;-<span class="st"> </span><span class="kw">caretList</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">trControl=</span>train_control, <span class="dt">methodList=</span>methodList)
+<span class="co"># create stacked ensemble of trained models</span>
+ensemble &lt;-<span class="st"> </span><span class="kw">caretStack</span>(models, <span class="dt">method=</span><span class="st">&#39;rpart&#39;</span>)
+<span class="co"># summarize ensemble</span>
+<span class="kw">summary</span>(ensemble)</code></pre></div>
+<pre><code>## Call:
+## rpart(formula = .outcome ~ ., data = list(glm = c(0.953051257162688, 
+## 0.958095739101053, 0.85887916688888, 0.314809950674701, 0.752185013551774, 
+## 0.184555913091376, 0.650108014935502, 0.600063606290071, 0.696026046535039, 
+## 0.958945354456846, 0.483256811189423, 0.722874779481644, 0.524244287892272, 
+## 0.952401953246284, 0.961070988645185, 0.528629535656046, 0.848212261104731, 
+## 0.325720565159536, 0.265062837824198, 0.306239835944601, 0.880975557961356, 
+## 0.346692761596444, 0.584431374374848, 0.954954036992555, 0.969715130944145, 
+## 0.963707429906792, 0.910720506246518, 0.930524215585373, 0.299571954911195, 
+## 0.977424207918859, 0.642343185593917, 0.132572718831246, 0.833834420262351, 
+## 0.989901285751701, 0.972594088337254, 0.686323796835962, 0.884257063028402, 
+## 0.481236542895937, 0.9677376303654, 0.700920611251387, 0.637718071929156, 
+## 0.755256816269779, 0.951657580936434, 0.998341075297739, 0.91125379831104, 
+## 0.784124489003413, 0.894658522105206, 0.901288067990899, 0.995022496308702, 
+## 0.865912094060224, 0.948109892432111, 0.806021663976616, 0.419478356306152, 
+## 0.838472435046698, 0.937304979998552, 0.980415137633297, 0.736478867836674, 
+## 0.63880652466032, 0.751534422543387, 0.494652222126384, 0.917765331153936, 
+## 0.98453622186921, 0.861841179306258, 0.718882858123029, 0.92852820049092, 
+## 0.96907068421229, 0.791185614974929, 0.760351456197514, 0.975557558262242, 
+## 0.555995892087884, 0.876036546040046, 0.94589374195788, 0.907704428010341, 
+## 0.841712033178728, 0.872289721293513, 0.940102606300061, 0.72895856467944, 
+## 0.853996482793259, 0.683397153987871, 0.547731565660033, 0.784110136206764, 
+## 0.738212156579165, 0.942750326070168, 0.762020114507566, 0.893600734794305, 
+## 0.943714418227953, 0.742130176811609, 0.821348230278369, 0.854817917011086, 
+## 0.674573981560566, 0.812317726287503, 0.50265225838879, 0.989409350613652, 
+## 0.917253692862616, 0.688278097216888, 0.386725256226286, 0.949382343025537, 
+## 0.648429594517848, 0.874958115454339, 0.442016623644194, 0.909844416172741, 
+## 0.871810988139328, 0.945194901499105, 0.534232238112662, 0.700121832034019, 
+## 0.778351318633411, 0.898461705835151, 0.553741772876854, 0.667423535664109, 
+## 0.759015998604891, 0.87105580116034, 0.843928322611711, 0.807229639916422, 
+## 0.946674458566967, 0.87350489990668, 0.230246018898447, 0.952860389996093, 
+## 0.735259964101078, 0.998012539874804, 0.9498054841721, 0.665286088061955, 
+## 0.925201268178742, 0.546740461624441, 0.898955695596301, 0.945714249379185, 
+## 0.830012992540059, 0.548381864007711, 0.874172658679228, 0.958706705438238, 
+## 0.689673371283455, 0.877899488513011, 0.905357962341416, 0.945738328826993, 
+## 0.40565868120276, 0.153708371384636, 0.66572631665473, 0.641404787945913, 
+## 0.344866401626344, 0.934817084210213, 0.930497380566112, 0.887900962395227, 
+## 0.0254366695970163, 0.701383904483636, 0.969001144199781, 0.661712430919261, 
+## 0.949157998879512, 0.954795818023797, 0.943218065659777, 0.870023030891881, 
+## 0.529466593997153, 0.521450100859371, 0.24048749144298, 0.589078282916621, 
+## 0.90456383829272, 0.6385725886185, 0.824909132978535, 0.973442417569207, 
+## 0.918590313847628, 0.759014147953176, 0.890642216501112, 0.314287983904611, 
+## 0.190656023048842, 0.844185650014582, 0.511150029996566, 0.70578108302244, 
+## 0.353757122570861, 0.948746222462965, 0.915813000758116, 0.870319403553065, 
+## 0.956639101880133, 0.475412882566585, 0.709644779826367, 0.91967319019534, 
+## 0.739279219251595, 0.874098574509036, 0.401970661625533, 0.595173894771048, 
+## 0.540015447082072, 0.386922208931911, 0.941691217411074, 0.746524603260119, 
+## 0.939497562550129, 0.575218706704547, 0.257089297572756, 0.858070965108653, 
+## 0.650955374033442, 0.91054434401173, 0.771832822924239, 0.715359460205826, 
+## 0.880774626029125, 0.937518488722379, 0.813882372097382, 0.783042125538073, 
+## 0.811762289589769, 0.960936440984069, 0.717715401294037, 0.719389690577033, 
+## 0.82745153519684, 0.766641780841237, 0.0924769679688028, 0.842978803965421, 
+## 0.486442513897395, 0.923067304811416, 0.812685481417125, 0.954888234773378, 
+## 0.270016558229892, 0.400758215593288, 0.834577114979937, 0.936697351021979, 
+## 0.99601445577501, 0.681571776268354, 0.581963494856109, 0.432513105841615, 
+## 0.640257752520974, 0.786611439172398, 0.949786817291227, 0.799060035371083, 
+## 0.671945612679124, 0.939398224164642, 0.932073643658478, 0.776042983316105, 
+## 0.670507398133359, 0.299626049638312, 0.658008898433258, 0.547943784337918, 
+## 0.75362588449137, 0.965857524513019, 0.967010382243772, 0.959433841181008, 
+## 0.912462859716047, 0.854786835581599, 0.553595583257467, 0.970788630781364, 
+## 0.873885133097866, 0.784150263798224, 0.84047550426649, 0.955594366869655, 
+## 0.887586212744108, 0.892014692740623, 0.903069755770341, 0.909705329322654, 
+## 0.808976278981038, 0.866226329211781, 0.892336099257971, 0.876795863846395, 
+## 0.579887017094107, 0.87813605998835, 0.968114508178456, 0.632775042370563, 
+## 0.89521959237679, 0.488315217879056, 0.954170266074032, 0.721061747072713, 
+## 0.822624964817125, 0.342855737123821, 0.788420866061083, 0.883078006508762, 
+## 0.976234020602672, 0.613475857668185, 0.935193773009691, 0.76548808938973, 
+## 0.813428625100329, 0.989169757545747, 0.69511344000926, 0.895345983689389, 
+## 0.914506139571774, 0.964179488490031, 0.808675535379847, 0.89524921482404, 
+## 0.235297598376937, 0.50066245459128, 0.977127059482183, 0.660614181903302, 
+## 0.920979129271868, 0.781192098861976, 0.912123695292493, 0.904609106425321, 
+## 0.862231183512567, 0.975018019491638, 0.887727534041828, 0.626005474057837, 
+## 0.761062233104523, 0.58989896061867, 0.910188762679297, 0.352927244645287, 
+## 0.68889122233863, 0.977885683618116, 0.807967226240266, 0.926192719904255, 
+## 0.677231829889067, 0.885893833461238, 0.976480825271385, 0.867663549810815, 
+## 0.140907095146263, 0.421565130353645, 0.693280760738865, 0.708207214935352, 
+## 0.562035541097763, 0.8603835138909, 0.776139047936548, 0.827648854515767, 
+## 0.695720440681508, 0.657940232750353, 0.832866641645026, 0.918099217652215, 
+## 0.934291099600117, 0.569853208220505, 0.0691540279418732, 0.931109662674831, 
+## 0.0765633303985364, 0.85673425448684, 0.907182545053234, 0.828787039125085, 
+## 0.987561465386588, 0.29690699594852, 0.844426100390946, 0.939775730533387, 
+## 0.371989566943227, 0.924683539026673, 0.883983670107772, 0.708880961773285, 
+## 0.848113484786559, 0.867751813541948, 0.770087391944057, 0.872787704537997, 
+## 0.688574790098755, 0.886120753764587, 0.839384445809357, 0.928108313406017, 
+## 0.931671239448513, 0.457435756325279, 0.783295425764292, 0.80623275234043, 
+## 0.980277981306003, 0.754123688824696, 0.958102303986293, 0.750939335346643, 
+## 0.954071899988049, 0.972226351364737, 0.902160971627735, 0.869576085881861, 
+## 0.877530319311754, 0.756081073636111, 0.651741090797322, 0.774241186878109, 
+## 0.740080708407008, 0.858384180777407, 0.903354650719075, 0.966715625804739, 
+## 0.70451839187884, 0.900764749192881, 0.93357617264099, 0.71800315706017, 
+## 0.421521140603624, 0.239092699245138, 0.889203851501047, 0.899923403603129, 
+## 0.773988623207612, 0.931030760047848, 0.892776050317642, 0.797752249921897, 
+## 0.843218477096792, 0.716993976663318, 0.318785505081014, 0.803567118914535, 
+## 0.885934767330098, 0.827659809518092, 0.911115825376754, 0.893406268445303, 
+## 0.821177198542335, 0.852747201689708, 0.481542877196625, 0.923684808792929, 
+## 0.91248848773185, 0.818192058831394, 0.872933674746896, 0.695806912801524, 
+## 0.720217141473725, 0.731928749973023, 0.527280052497651, 0.857261298544614, 
+## 0.544304793110193, 0.67036318034099, 0.944406394019484, 0.90459041968017, 
+## 0.964141852928657, 0.815431602746048, 0.801537284127708, 0.589122200296171, 
+## 0.879783717696365, 0.894410380971727, 0.903475488408534, 0.917301302254272, 
+## 0.81874041554115, 0.861218482661572, 0.636474925202552, 0.965395555585249, 
+## 0.534676289268003, 0.946777734041253, 0.859965474993015, 0.751109196329137, 
+## 0.911031518462322, 0.843472685819034, 0.985624501083974, 0.812187003629612, 
+## 0.830064012654038, 0.0287430028663036, 0.859760505298375, 0.895815904707375, 
+## 0.850735140678052, 0.893808478903923, 0.759505502198521, 0.589361129355288, 
+## 0.935168204556172, 0.895347148545943, 0.891750340901, 0.890989931205683, 
+## 0.839603705377719, 0.858847682144187, 0.914953297994293, 0.972202020259574, 
+## 0.907092728332423, 0.652760293887727, 0.754646373078921, 0.86850736701707, 
+## 0.482796588551785, 0.92432674414464, 0.952286455305987, 0.765154088560804, 
+## 0.651700474233453, 0.805285648433757, 0.88806076000289, 0.956779540044917, 
+## 0.514882097640229, 0.381795418857065, 0.282921174490116, 0.852875424780943, 
+## 0.752129588745917, 0.364616084235841, 0.215907970128839, 0.909331341417803, 
+## 0.920436740033271, 0.28412450471618, 0.625970904316298, 0.912706543145811, 
+## 0.92839211172917, 0.983652942674685, 0.798305272577695, 0.900646942322836, 
+## 0.716085225144712, 0.834798461705615, 0.882156791371878, 0.793551363310189, 
+## 0.764481558218139, 0.55561597419498, 0.966303900920227, 0.880357437770405, 
+## 0.681453177862017, 0.364261470793222, 0.748251138125274, 0.292141312552872, 
+## 0.897358776974594, 0.838997088185604, 0.753674095535677, 0.565230565218162, 
+## 0.665922470898218, 0.866156433000942, 0.896411566279414, 0.807862042760691, 
+## 0.812371818617291, 0.927976252623603, 0.800979624283995, 0.657832859336935, 
+## 0.837363325899522, 0.662137267944593, 0.793759270551226, 0.71689561237428, 
+## 0.588434030160761, 0.916129407744689, 0.883672392843513, 0.897696310956275, 
+## 0.844601417575414, 0.891480116392841, 0.884679909530382, 0.833925136947224, 
+## 0.823467824338458, 0.906043747524223, 0.0526627904174204, 0.708473457277871, 
+## 0.669295665689467, 0.736061886079314, 0.881779386351392, 0.543211488043799, 
+## 0.845311200006498, 0.910035324959093, 0.90833730745375, 0.650611494779749, 
+## 0.679431631865378, 0.835674534801532, 0.928539657162173, 0.272106648748904, 
+## 0.231666765503033, 0.130057549879654, 0.942609150843695, 0.317122821984511, 
+## 0.9726033410941, 0.0927252172766138, 0.459991134642979, 0.406248794735627, 
+## 0.642943328649834, 0.611529177414958, 0.809625048141723, 0.76289519250281, 
+## 0.0613089632455827, 0.700175598485297, 0.342564800190591, 0.534199005541661, 
+## 0.279936528516168, 0.4314029614188, 0.601458160637947, 0.832272743569696, 
+## 0.452397373033104, 0.0676040260726758, 0.0424756757249496, 0.640452276727185, 
+## 0.167993563600905, 0.12516180419896, 0.496187097132029, 0.65589491351399, 
+## 0.83449835088116, 0.805559248828191, 0.151566028736848, 0.338178190710291, 
+## 0.353662012823034, 0.255756503806678, 0.719185775467216, 0.568214088596754, 
+## 0.149919286013173, 0.926738093848699, 0.412666533702721, 0.324885016757837, 
+## 0.274283716645206, 0.423833751228996, 0.635107772167807, 0.120133583949661, 
+## 0.882306377708141, 0.526264468477248, 0.816475754827646, 0.881676474016428, 
+## 0.353189423352059, 0.308212812632115, 0.317543167214789, 0.61323438148995, 
+## 0.136356925386515, 0.040197363717005, 0.109068487087956, 0.0202293609762977, 
+## 0.687952879316395, 0.764019804782834, 0.847602923777232, 0.479398081143438, 
+## 0.120003279679331, 0.173462165156495, 0.356131242504368, 0.0528132581854618, 
+## 0.163318274904321, 0.637325484433032, 0.783937586279812, 0.651396050713305, 
+## 0.304838947468606, 0.0248235425833603, 0.30026660728624, 0.8919121028812, 
+## 0.667524270735696, 0.637592582560341, 0.0516572891198053, 0.345352655253291, 
+## 0.123941827189109, 0.454039981761043, 0.707855078289124, 0.091307508849368, 
+## 0.711904643925655, 0.858454192061691, 0.629560302192659, 0.347571487393558, 
+## 0.342789515787037, 0.225151102974897, 0.312454096103199, 0.35460298602803, 
+## 0.132863120057671, 0.113310181418943, 0.139974549573371, 0.181727950021769, 
+## 0.715315967267591, 0.564876994761429, 0.0606108904601323, 0.713633121869115, 
+## 0.786340727525265, 0.0904317120354392, 0.309274185780802, 0.702752675210759, 
+## 0.301981843179724, 0.498093977434194, 0.24658510518276, 0.8321741802016, 
+## 0.50054573410485, 0.381192942699581, 0.896884953112499, 0.550622074007178, 
+## 0.77002472973474, 0.377583503342026, 0.492337402076268, 0.730393838624738, 
+## 0.556016123808815, 0.156382083440798, 0.603820761546813, 0.465068714633297, 
+## 0.328707403433914, 0.612955576994717, 0.680067243472388, 0.648443400678101, 
+## 0.478375982373306, 0.292114092716277, 0.182731732046635, 0.843476450892441, 
+## 0.849027144014106, 0.250676374908062, 0.674683887880139, 0.795769962474026, 
+## 0.0692681793236252, 0.708674559480369, 0.250234518738859, 0.097775864560453, 
+## 0.985874006493701, 0.258492205136936, 0.625713847629909, 0.0988863836404267, 
+## 0.131568367629994, 0.152277775021846, 0.250846736235051, 0.740895240653199, 
+## 0.76879299030626, 0.0858402524271203, 0.189720676540352, 0.15084173548894, 
+## 0.648880835775545, 0.576627380920177, 0.47707158714565, 0.156814373503291, 
+## 0.336345600750023, 0.77541935441276, 0.182987644543678, 0.874109070620746, 
+## 0.591500281092378, 0.267260072769927, 0.761380215467783, 0.0735770728142736, 
+## 0.236243201219388, 0.643347434738104, 0.510675563641594, 0.362828933981565, 
+## 0.796966882072902, 0.218196826669409, 0.212944582823979, 0.257359063035486, 
+## 0.905116429994271, 0.24219592367263, 0.25607990607773, 0.622761136799391, 
+## 0.776766984847271, 0.00571676927718823, 0.874580583068588, 0.726529910613456, 
+## 0.0787858343193321, 0.146889404211399, 0.497791496250756, 0.835114916321656, 
+## 0.396796716486196, 0.137293476117833, 0.590059173721881, 0.542683208826364, 
+## 0.171249106885273, 0.987189413624017, 0.347245645256558, 0.773219729623166, 
+## 0.470333531928236, 0.320963985004586, 0.339515721945948, 0.42042635739715, 
+## 0.569134078161482, 0.595501452823324, 0.709286642515049, 0.620355336945796, 
+## 0.163374830598383, 0.0379924721596566, 0.571404057259625, 0.112063169301446, 
+## 0.819933125003774, 0.577444409724361, 0.0629173392474929, 0.483824377106846, 
+## 0.743874223373336, 0.373832951349461, 0.151549571716357, 0.225111805548601, 
+## 0.568006598657497, 0.309137367128982, 0.338822657104436, 0.245596744543245, 
+## 0.17167040623459, 0.16407890973727, 0.201802872582866, 0.173318868766561, 
+## 0.240078065995761, 0.52941274050642, 0.7048521851553, 0.667735050691016, 
+## 0.587220003354867, 0.57665600292064, 0.499484384154365, 0.620222257679386, 
+## 0.2483489177272, 0.535487513916298, 0.507408560926349, 0.879300957175119, 
+## 0.036381465280329, 0.292768091366636, 0.248798828906604, 0.603572281374729, 
+## 0.428116453550079, 0.752586810821186, 0.116610065515921, 0.414306333703375, 
+## 0.69512736542406, 0.195382187736053, 0.694539971586895, 0.331798416114298, 
+## 0.12592954977003, 0.363438847435047, 0.652005236260279, 0.466422102871516, 
+## 0.636183125959228, 0.261959181310596, 0.917252667495865, 0.212589314313651, 
+## 0.845770373843264, 0.196165266136854, 0.0923302715511966, 0.2266156609053, 
+## 0.737279725837658, 0.624297444183182, 0.774079122796547, 0.801416881354341, 
+## 0.145164571680543, 0.799146801739213, 0.275559414263591, 0.347821890259785, 
+## 0.318338995449735, 0.172793401483356, 0.445199733609588, 0.449419321886982, 
+## 0.369772967563184, 0.303471833456679, 0.564185309608125, 0.736748401883241, 
+## 0.0877392350430801, 0.0666135055876599, 0.753790262697099), lda = c(0.958386071986982, 
+## 0.962978116004363, 0.858860217087358, 0.302858474432556, 0.783197688522066, 
+## 0.174161309812446, 0.668555713681069, 0.624310823371787, 0.710179053477544, 
+## 0.959462892286783, 0.452503339938082, 0.737301154036704, 0.536196685727766, 
+## 0.956450608381185, 0.962526820383922, 0.51699956527577, 0.854661171010248, 
+## 0.324148417172017, 0.246776657542315, 0.325246085640529, 0.884088831020892, 
+## 0.329109427153581, 0.581168947611315, 0.961764495060892, 0.96062518819204, 
+## 0.966389451948156, 0.916314044914605, 0.933953692874142, 0.28434195402187, 
+## 0.980261072279381, 0.69211179799297, 0.143036503565644, 0.856359950401639, 
+## 0.988751458871996, 0.976632598842594, 0.678963233843763, 0.888475653533751, 
+## 0.529272498859367, 0.969922917921784, 0.696910412012859, 0.630191761076957, 
+## 0.76927025670527, 0.960080296474759, 0.998784654886086, 0.922136281944625, 
+## 0.808982959077383, 0.896358296876791, 0.896842877793057, 0.994496992427683, 
+## 0.87496444097063, 0.949983672597486, 0.822989684874879, 0.423855389935205, 
+## 0.85614424949594, 0.940777960546582, 0.982283967295099, 0.741737443743037, 
+## 0.688127480491527, 0.756344116949857, 0.486312565399349, 0.92712194365985, 
+## 0.985983196760874, 0.870155483400618, 0.708658935597499, 0.934299984824972, 
+## 0.973203871741432, 0.821448248979317, 0.765832271025841, 0.979907663624039, 
+## 0.542699714935338, 0.888079331845588, 0.951450225135068, 0.923027265004947, 
+## 0.863191393249192, 0.880647256483685, 0.944602041114814, 0.742423823241986, 
+## 0.869304692723384, 0.669172819778843, 0.578978962085491, 0.793845163107677, 
+## 0.763728880889641, 0.944356759331879, 0.770083062995283, 0.905691867498117, 
+## 0.948595486008516, 0.750933376908073, 0.82929549038697, 0.849615612697729, 
+## 0.701425281914949, 0.822486539156496, 0.489441649974845, 0.989783619902501, 
+## 0.926217292783958, 0.707218929288963, 0.3795979259534, 0.953255786001237, 
+## 0.665812175397134, 0.874086464408997, 0.46452917154119, 0.914638506335317, 
+## 0.87478590418803, 0.951792326007555, 0.535227006470422, 0.718464270695789, 
+## 0.802735736211407, 0.908313373930357, 0.558060357574317, 0.677235099691955, 
+## 0.772023079200859, 0.878923343771717, 0.844182275793972, 0.837237408347843, 
+## 0.954316117237653, 0.883141786888738, 0.238180583667982, 0.955736022963286, 
+## 0.752940765114063, 0.998674671901048, 0.955780789090023, 0.657180994864932, 
+## 0.926984870712937, 0.538602505614664, 0.901436513906793, 0.94833197148848, 
+## 0.839823230875183, 0.57891050420251, 0.884400258338038, 0.9591392939219, 
+## 0.696643400877908, 0.879094684052161, 0.913613189027244, 0.952027932289082, 
+## 0.433701169532446, 0.144967788732986, 0.667940474924718, 0.602585884259633, 
+## 0.326239637103283, 0.935016691857309, 0.93986320693184, 0.90245919925514, 
+## 0.0221363687682808, 0.735157907522305, 0.973869996564253, 0.679006801945198, 
+## 0.954543846181255, 0.955915056994611, 0.947572655995322, 0.88349975228237, 
+## 0.540076251705138, 0.519241662705025, 0.274202451603586, 0.581113529500204, 
+## 0.913934077763295, 0.636584232175904, 0.831718587675857, 0.975359597204615, 
+## 0.93042325815893, 0.770748196537027, 0.895911507023222, 0.279225542933773, 
+## 0.173907072641134, 0.856322079789522, 0.507683871949615, 0.724867987294729, 
+## 0.371085308624374, 0.950186167379057, 0.9186265123542, 0.871268299302865, 
+## 0.964308875580655, 0.482774704930944, 0.739569429031387, 0.927428291430677, 
+## 0.737374445562159, 0.883081935134013, 0.402326347236249, 0.600902221133193, 
+## 0.525962599455899, 0.390756533068436, 0.940734826940288, 0.758278837765637, 
+## 0.950382445056503, 0.533817040116715, 0.252376086409707, 0.86260571225304, 
+## 0.647485115640529, 0.924427675850855, 0.757212818504231, 0.738484959438813, 
+## 0.878221652963055, 0.941002893899476, 0.834046883700365, 0.79067414469193, 
+## 0.822844265927114, 0.962968106685266, 0.734633932952272, 0.711082476185447, 
+## 0.847945915767999, 0.756415969239434, 0.0870247319198728, 0.847699679977736, 
+## 0.485860656698846, 0.933323411956384, 0.804912875150198, 0.956288716962979, 
+## 0.285532172117958, 0.406638948248937, 0.83567251379326, 0.940418674468521, 
+## 0.997348048976993, 0.699281504922466, 0.600106856889928, 0.441797520282961, 
+## 0.63559225329336, 0.770146895697346, 0.948921207902361, 0.829088230862945, 
+## 0.678309754284553, 0.947912961363342, 0.940249640980874, 0.811795315336768, 
+## 0.680672093224644, 0.271706172227794, 0.68344552109255, 0.551841813450512, 
+## 0.764785572184144, 0.967837889976039, 0.972428041359937, 0.954927421653893, 
+## 0.92486188119136, 0.865802248139708, 0.566721801477324, 0.972875080403133, 
+## 0.890496354722351, 0.82031549409925, 0.854910824664846, 0.958961060740696, 
+## 0.891506777109113, 0.900326480050901, 0.900957189878304, 0.907610891690096, 
+## 0.823758306599425, 0.878047227944174, 0.887758060106899, 0.875873457555894, 
+## 0.588537798996413, 0.880058632190315, 0.969667237978431, 0.61335967578347, 
+## 0.905397692113209, 0.510448063910782, 0.956721439561639, 0.741900459014366, 
+## 0.840512847259059, 0.378443055140036, 0.792289990504109, 0.886751188757628, 
+## 0.97827881282847, 0.653797227471872, 0.940314935818708, 0.791692308717914, 
+## 0.825300523077781, 0.988029276107241, 0.717304558086278, 0.891338733375895, 
+## 0.921268238448035, 0.96882033048144, 0.806311803637692, 0.905332905383967, 
+## 0.235933916206776, 0.497410856153194, 0.978938035328761, 0.69018751378284, 
+## 0.92953957203868, 0.791257146320022, 0.919785663412833, 0.919633602318112, 
+## 0.871750135539322, 0.976282431271559, 0.908034365704355, 0.58726308219449, 
+## 0.781110212673502, 0.573105225656775, 0.920257020668673, 0.318474365973356, 
+## 0.680838815388414, 0.979495022241474, 0.824274082372844, 0.931825818361673, 
+## 0.683809067833928, 0.889218471780631, 0.979210080081063, 0.882748830653636, 
+## 0.148877466501482, 0.452510389167275, 0.706422294812868, 0.73354503694632, 
+## 0.554843644996668, 0.866377920299765, 0.769203904604713, 0.830372485452739, 
+## 0.68520963282006, 0.651742821698432, 0.845783610607634, 0.922393502893228, 
+## 0.945557056601795, 0.583779803535785, 0.0731022923729763, 0.934701764316106, 
+## 0.0645712751005522, 0.874870790707177, 0.918591534975684, 0.838170153087413, 
+## 0.987143357409401, 0.270540734045784, 0.850144124353865, 0.949196559441712, 
+## 0.351849688077706, 0.926442784028319, 0.899226886951712, 0.723911834959543, 
+## 0.863376217423714, 0.882703291100244, 0.767559937935336, 0.885523144373898, 
+## 0.679011864642318, 0.880201945429299, 0.839709614405011, 0.935782832232867, 
+## 0.932470648685389, 0.472323575808305, 0.792137712296657, 0.797418773799896, 
+## 0.982853942774392, 0.765234129767905, 0.945130874524734, 0.758442104492331, 
+## 0.957952785245067, 0.973862764112691, 0.906668726444364, 0.875071736191179, 
+## 0.884081831719927, 0.762533119986748, 0.700979023318505, 0.804226109011326, 
+## 0.734059594636249, 0.877189135375166, 0.9106167984677, 0.970336157499332, 
+## 0.725141417704862, 0.918551244137315, 0.943700844649053, 0.724995435279486, 
+## 0.411417236952838, 0.234179028210345, 0.893086717145203, 0.909791507979313, 
+## 0.770424947702005, 0.937924835852395, 0.906510924604849, 0.794523419861598, 
+## 0.862811427154031, 0.713721737443966, 0.351890112773157, 0.813570761438878, 
+## 0.900832595185882, 0.831442446563805, 0.92578148885952, 0.902008342541673, 
+## 0.843240749708291, 0.859015726993071, 0.470110893438645, 0.9347117684088, 
+## 0.914869554485669, 0.828727711293772, 0.884443504273863, 0.697396501577209, 
+## 0.726374081649796, 0.721770195595487, 0.511465667553365, 0.854134991601238, 
+## 0.517618270246465, 0.692711406842704, 0.949231450134155, 0.907078597579348, 
+## 0.965998163267573, 0.831248284775068, 0.828903965533408, 0.592016205764271, 
+## 0.903303404430717, 0.902451157571832, 0.904910385913459, 0.923253161382803, 
+## 0.813309607554033, 0.862212139698164, 0.657446569921923, 0.966831799887284, 
+## 0.552985118564986, 0.946676473111894, 0.865088654073566, 0.770383373534952, 
+## 0.913828065935482, 0.850150846087876, 0.987489328096584, 0.834097980180465, 
+## 0.851014686687953, 0.0282688534578425, 0.88133390961873, 0.903840966659902, 
+## 0.86949536496132, 0.895090137406537, 0.777339895356093, 0.598919777861358, 
+## 0.937535692676443, 0.906367829683814, 0.898709699071897, 0.89439355333744, 
+## 0.840871378578854, 0.862884710948128, 0.92411864972548, 0.973934273311574, 
+## 0.916291628242461, 0.664850111577235, 0.758955813738078, 0.877997872578135, 
+## 0.475917138811541, 0.926816199102565, 0.954180143482695, 0.77698097197627, 
+## 0.6626506363957, 0.809728826060718, 0.898812407846538, 0.958607103761765, 
+## 0.551033213242686, 0.386862702268625, 0.264951258885428, 0.865261320252258, 
+## 0.760609469771247, 0.34114434356426, 0.204043324021249, 0.917150695000056, 
+## 0.930096882228182, 0.340350727735597, 0.643914556025731, 0.923895795997331, 
+## 0.929562783709472, 0.986416584183986, 0.832551405345267, 0.888623095024728, 
+## 0.725894296453692, 0.830729847992192, 0.888486533489889, 0.782797504512506, 
+## 0.773143072461289, 0.58366313995514, 0.968389663612765, 0.883806190611145, 
+## 0.702713569556156, 0.402377274868612, 0.768809828692286, 0.297497658399238, 
+## 0.903925646353357, 0.862704209463583, 0.760923286209893, 0.546559784793544, 
+## 0.666853041714529, 0.862472978773876, 0.902008168039061, 0.79872781768231, 
+## 0.8237610087361, 0.934906585109099, 0.8172369646368, 0.674210085113622, 
+## 0.855197180564852, 0.686791393544478, 0.809973184378572, 0.728923189797897, 
+## 0.570036168010861, 0.923273438642983, 0.887118635121896, 0.898749703654332, 
+## 0.85947307925801, 0.89522078077686, 0.898660879893392, 0.849878884255606, 
+## 0.828927257697614, 0.912467552211514, 0.0492623975685308, 0.713175109709449, 
+## 0.717881101415614, 0.756101671000252, 0.886183785764912, 0.546352011569479, 
+## 0.864645260866284, 0.919410864379319, 0.909503779576341, 0.6489502893021, 
+## 0.696713731734065, 0.832806938575821, 0.937396081119809, 0.263975321697929, 
+## 0.205439410940767, 0.139706974090309, 0.94871547811215, 0.284034185850637, 
+## 0.964420494130639, 0.0915324797860856, 0.42223239222142, 0.37773794695664, 
+## 0.627993790632512, 0.650841779231974, 0.814873869681773, 0.782276042456964, 
+## 0.0593910552068254, 0.699580124098259, 0.334316301122192, 0.526204506899719, 
+## 0.277802644287222, 0.419881749106096, 0.60830099220448, 0.853115140640235, 
+## 0.467607646262843, 0.070969336640789, 0.0419933035958426, 0.662102946067296, 
+## 0.150512190685067, 0.110981769044548, 0.49390968549475, 0.661532095440779, 
+## 0.84900997444138, 0.821838367601395, 0.161787737209113, 0.343646595261188, 
+## 0.389495709491909, 0.244282591693335, 0.70168774136797, 0.604474063326896, 
+## 0.157565035735454, 0.937299842800485, 0.404768118376548, 0.309752108138139, 
+## 0.254975234357488, 0.422688938630679, 0.645820078380003, 0.136484611302083, 
+## 0.893579709692452, 0.582527528323701, 0.828415557440863, 0.888205903445709, 
+## 0.329806207582431, 0.314168038025145, 0.305398841490536, 0.620627826102788, 
+## 0.130726913416767, 0.0407280874281913, 0.11994708712488, 0.01729555935237, 
+## 0.710594266880224, 0.777274610611156, 0.85685615831858, 0.486176619802039, 
+## 0.10874627990489, 0.239901504554133, 0.379011815497867, 0.0446366997442029, 
+## 0.140292007206542, 0.659491582410151, 0.787169509497341, 0.655570453676594, 
+## 0.290894519298211, 0.0240128775570781, 0.307771465651619, 0.892984917154045, 
+## 0.687183680181749, 0.629065808022082, 0.0451129506877012, 0.347240710048925, 
+## 0.116747567319006, 0.47672388184021, 0.715567056108152, 0.0891858049733552, 
+## 0.724456106328891, 0.872563115433066, 0.648401278903481, 0.342416141509801, 
+## 0.336121530830524, 0.223075205368535, 0.339062991771028, 0.369498451501146, 
+## 0.138698828406496, 0.106510364526974, 0.14994636995584, 0.178497329845862, 
+## 0.71588819249746, 0.546650106370509, 0.0518945128517676, 0.711697639682455, 
+## 0.803263691414065, 0.0845520198288157, 0.290201814724092, 0.710581123708473, 
+## 0.305676775026597, 0.480410759672323, 0.277672517315764, 0.830188252309146, 
+## 0.520957441915155, 0.366262782879567, 0.90125694128485, 0.599026072011316, 
+## 0.794179351894165, 0.406018348959599, 0.51042095459052, 0.718910869893026, 
+## 0.560179526713892, 0.142614562628049, 0.599457221810202, 0.504545609040934, 
+## 0.287515504184717, 0.633086849494241, 0.690856927889885, 0.637536519159075, 
+## 0.497093462568646, 0.269955811589028, 0.155796058908518, 0.854297510067159, 
+## 0.854080902793633, 0.225909762212078, 0.695108885924986, 0.82846319377955, 
+## 0.0653371019184436, 0.717863786781081, 0.243860107658981, 0.0974844516260257, 
+## 0.99080360265041, 0.2406772828501, 0.633010894234573, 0.0908434301146492, 
+## 0.127393244829022, 0.134990451230954, 0.250685211630676, 0.742038844760488, 
+## 0.778482051683754, 0.088758631393759, 0.188516417650311, 0.162051374264702, 
+## 0.655654959518221, 0.610534955256999, 0.464971895366955, 0.15811570380799, 
+## 0.338098845168008, 0.784170231804055, 0.173819396905118, 0.883712620228914, 
+## 0.598853437320952, 0.246045572859086, 0.767559649488715, 0.06113363922658, 
+## 0.238178918239677, 0.651600556297326, 0.508865297532097, 0.376632870858269, 
+## 0.794843831384079, 0.216744477528262, 0.200820922417216, 0.243755866071719, 
+## 0.915253955478841, 0.249534991593007, 0.257679230130395, 0.638117916404094, 
+## 0.784226215493112, 0.00656595050781807, 0.887941096967722, 0.732089891769394, 
+## 0.0700239901631858, 0.142902081600351, 0.461473779570138, 0.845792207201813, 
+## 0.383313256449866, 0.13629906739962, 0.616135945391271, 0.551179825918982, 
+## 0.144263139361828, 0.990553567019526, 0.348373676499465, 0.778653308581399, 
+## 0.462708808713126, 0.306965441241999, 0.342783549183306, 0.406032661961144, 
+## 0.589287956071996, 0.610557408573761, 0.71471759537606, 0.637204304761958, 
+## 0.147868477939634, 0.0374668583777157, 0.574971104627774, 0.110167175686962, 
+## 0.830496887457063, 0.619023854856898, 0.0500133988140515, 0.52244345084645, 
+## 0.723020373204231, 0.362460782238694, 0.144283231256657, 0.239046050826892, 
+## 0.579604252268163, 0.304761172241834, 0.328139732956354, 0.23890523971643, 
+## 0.134281661628837, 0.168048215571617, 0.188867475946522, 0.170750416459014, 
+## 0.232842029801012, 0.536097592060267, 0.69790696562415, 0.673350600523292, 
+## 0.596851276576304, 0.610367195471754, 0.486973062698443, 0.599027660700978, 
+## 0.243155262075541, 0.518129027081139, 0.50643447736246, 0.896700682371225, 
+## 0.0346795522510761, 0.283346564223603, 0.248376296871524, 0.609125139204232, 
+## 0.417241184958375, 0.744822933293396, 0.106762125626538, 0.388898613280549, 
+## 0.713134786106623, 0.210332066138096, 0.708152080889416, 0.352023343392863, 
+## 0.132373213361272, 0.368312080145862, 0.64794660318098, 0.454489297363444, 
+## 0.634553842047288, 0.262124761024674, 0.898838565615997, 0.203946752406817, 
+## 0.863257535871388, 0.197966546965742, 0.0784562751670896, 0.222875728007091, 
+## 0.751846859279304, 0.620417399206161, 0.776159782139887, 0.807999581494565, 
+## 0.154689277948017, 0.820571620189719, 0.280505538099138, 0.354004894639258, 
+## 0.351982056368604, 0.158570495340489, 0.411801979158477, 0.460208160968111, 
+## 0.376280443493286, 0.293145600066582, 0.586622200281909, 0.752587176301719, 
+## 0.0767645840341628, 0.0621450986478847, 0.75883430175351), knn = c(0.888888888888889, 
+## 1, 0.555555555555556, 0.444444444444444, 0.666666666666667, 0.333333333333333, 
+## 0.666666666666667, 0.555555555555556, 0.666666666666667, 0.888888888888889, 
+## 0.444444444444444, 0.777777777777778, 0.444444444444444, 1, 0.888888888888889, 
+## 0.222222222222222, 0.666666666666667, 0.555555555555556, 0.666666666666667, 
+## 0.555555555555556, 0.555555555555556, 0.333333333333333, 0.444444444444444, 
+## 0.888888888888889, 0.888888888888889, 1, 0.888888888888889, 1, 
+## 0.222222222222222, 1, 0.666666666666667, 0.444444444444444, 0.777777777777778, 
+## 1, 1, 0.555555555555556, 1, 0.666666666666667, 0.888888888888889, 
+## 0.333333333333333, 0.555555555555556, 0.777777777777778, 0.888888888888889, 
+## 0.777777777777778, 1, 0.777777777777778, 0.888888888888889, 0.777777777777778, 
+## 1, 0.888888888888889, 1, 0.777777777777778, 0.555555555555556, 
+## 0.777777777777778, 1, 1, 0.555555555555556, 1, 0.777777777777778, 
+## 0.555555555555556, 1, 1, 0.888888888888889, 0.555555555555556, 
+## 0.777777777777778, 1, 0.888888888888889, 0.777777777777778, 0.888888888888889, 
+## 0.555555555555556, 1, 0.888888888888889, 1, 1, 0.888888888888889, 
+## 0.888888888888889, 0.666666666666667, 0.666666666666667, 0.555555555555556, 
+## 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.888888888888889, 
+## 0.666666666666667, 1, 0.888888888888889, 0.555555555555556, 0.777777777777778, 
+## 0.666666666666667, 0.333333333333333, 0.777777777777778, 0.666666666666667, 
+## 1, 0.888888888888889, 0.777777777777778, 0.444444444444444, 0.888888888888889, 
+## 0.555555555555556, 0.555555555555556, 0.333333333333333, 1, 1, 
+## 1, 0.444444444444444, 0.666666666666667, 1, 1, 0.555555555555556, 
+## 0.555555555555556, 0.666666666666667, 0.888888888888889, 1, 1, 
+## 1, 0.888888888888889, 0.333333333333333, 0.888888888888889, 0.777777777777778, 
+## 0.888888888888889, 1, 0.555555555555556, 1, 0.555555555555556, 
+## 0.777777777777778, 1, 0.777777777777778, 0.444444444444444, 0.888888888888889, 
+## 1, 0.555555555555556, 0.777777777777778, 0.888888888888889, 0.888888888888889, 
+## 0.444444444444444, 0.111111111111111, 0.666666666666667, 0.666666666666667, 
+## 0.222222222222222, 0.888888888888889, 0.888888888888889, 0.666666666666667, 
+## 0.222222222222222, 0.777777777777778, 0.888888888888889, 0.666666666666667, 
+## 1, 0.888888888888889, 1, 0.888888888888889, 0.444444444444444, 
+## 0.222222222222222, 0.222222222222222, 0.666666666666667, 0.777777777777778, 
+## 0.222222222222222, 0.555555555555556, 1, 1, 0.555555555555556, 
+## 0.888888888888889, 0.444444444444444, 0.111111111111111, 1, 0.555555555555556, 
+## 1, 0.666666666666667, 1, 0.666666666666667, 0.555555555555556, 
+## 1, 0.555555555555556, 0.888888888888889, 1, 0.444444444444444, 
+## 0.888888888888889, 0.444444444444444, 0.444444444444444, 0.333333333333333, 
+## 0.111111111111111, 0.888888888888889, 0.777777777777778, 0.888888888888889, 
+## 0.666666666666667, 0.444444444444444, 0.777777777777778, 0.666666666666667, 
+## 1, 0.555555555555556, 0.555555555555556, 0.777777777777778, 0.888888888888889, 
+## 0.777777777777778, 0.888888888888889, 0.777777777777778, 1, 0.777777777777778, 
+## 0.777777777777778, 0.777777777777778, 0.333333333333333, 0, 0.777777777777778, 
+## 0.333333333333333, 1, 0.444444444444444, 0.888888888888889, 0.333333333333333, 
+## 0.444444444444444, 0.888888888888889, 1, 0.777777777777778, 0.444444444444444, 
+## 0.888888888888889, 0.444444444444444, 0.777777777777778, 0.666666666666667, 
+## 1, 0.777777777777778, 0.666666666666667, 0.888888888888889, 1, 
+## 0.888888888888889, 1, 0.333333333333333, 0.333333333333333, 0.666666666666667, 
+## 0.777777777777778, 1, 0.888888888888889, 1, 1, 0.888888888888889, 
+## 0.444444444444444, 0.888888888888889, 1, 0.777777777777778, 0.888888888888889, 
+## 1, 0.777777777777778, 1, 0.888888888888889, 1, 0.777777777777778, 
+## 0.444444444444444, 0.333333333333333, 0.666666666666667, 0.777777777777778, 
+## 1, 1, 0.555555555555556, 0.777777777777778, 0.333333333333333, 
+## 1, 0.666666666666667, 0.444444444444444, 0.666666666666667, 0.888888888888889, 
+## 1, 1, 0.333333333333333, 1, 0.777777777777778, 0.888888888888889, 
+## 0.888888888888889, 0.777777777777778, 0.777777777777778, 0.888888888888889, 
+## 1, 0.888888888888889, 0.888888888888889, 0.555555555555556, 0.555555555555556, 
+## 1, 0.777777777777778, 1, 0.888888888888889, 1, 0.777777777777778, 
+## 0.777777777777778, 0.888888888888889, 0.555555555555556, 0.444444444444444, 
+## 1, 0.444444444444444, 0.888888888888889, 0.555555555555556, 0.777777777777778, 
+## 1, 1, 0.777777777777778, 0.888888888888889, 0.888888888888889, 
+## 1, 0.888888888888889, 0.555555555555556, 0.666666666666667, 0.666666666666667, 
+## 0.777777777777778, 0.444444444444444, 0.888888888888889, 0.555555555555556, 
+## 0.888888888888889, 0.666666666666667, 0.555555555555556, 0.666666666666667, 
+## 1, 0.888888888888889, 0.222222222222222, 0.222222222222222, 1, 
+## 0.333333333333333, 0.888888888888889, 0.555555555555556, 0.777777777777778, 
+## 1, 0.333333333333333, 0.666666666666667, 1, 0.222222222222222, 
+## 0.888888888888889, 0.888888888888889, 0.888888888888889, 0.666666666666667, 
+## 1, 0.444444444444444, 0.888888888888889, 0.777777777777778, 0.777777777777778, 
+## 1, 0.888888888888889, 0.888888888888889, 0.444444444444444, 1, 
+## 0.555555555555556, 0.888888888888889, 0.888888888888889, 0.777777777777778, 
+## 0.777777777777778, 1, 0.888888888888889, 1, 0.666666666666667, 
+## 1, 0.888888888888889, 0.777777777777778, 0.888888888888889, 0.888888888888889, 
+## 1, 0.666666666666667, 1, 0.777777777777778, 0.777777777777778, 
+## 0.888888888888889, 0.444444444444444, 0.555555555555556, 0.222222222222222, 
+## 0.777777777777778, 1, 0.777777777777778, 1, 1, 0.777777777777778, 
+## 0.777777777777778, 0.666666666666667, 0.555555555555556, 0.888888888888889, 
+## 0.888888888888889, 0.888888888888889, 0.888888888888889, 0.888888888888889, 
+## 1, 0.777777777777778, 0.222222222222222, 1, 0.777777777777778, 
+## 0.777777777777778, 1, 0.555555555555556, 0.777777777777778, 1, 
+## 0.333333333333333, 0.888888888888889, 0.666666666666667, 0.444444444444444, 
+## 1, 0.666666666666667, 1, 0.888888888888889, 1, 0.444444444444444, 
+## 1, 1, 1, 0.777777777777778, 0.888888888888889, 0.555555555555556, 
+## 0.777777777777778, 1, 0.444444444444444, 0.888888888888889, 0.666666666666667, 
+## 0.888888888888889, 0.777777777777778, 0.888888888888889, 1, 0.666666666666667, 
+## 0.888888888888889, 0, 0.888888888888889, 0.888888888888889, 0.888888888888889, 
+## 0.666666666666667, 0.666666666666667, 0.222222222222222, 1, 0.777777777777778, 
+## 1, 0.777777777777778, 0.888888888888889, 0.444444444444444, 1, 
+## 0.888888888888889, 0.888888888888889, 0.555555555555556, 0.888888888888889, 
+## 0.666666666666667, 0.333333333333333, 0.888888888888889, 1, 0.888888888888889, 
+## 0.666666666666667, 0.444444444444444, 0.888888888888889, 1, 0.333333333333333, 
+## 0.777777777777778, 0.222222222222222, 0.777777777777778, 0.888888888888889, 
+## 0.333333333333333, 0.222222222222222, 1, 1, 0.666666666666667, 
+## 0.777777777777778, 0.888888888888889, 0.888888888888889, 1, 0.777777777777778, 
+## 0.666666666666667, 0.777777777777778, 0.555555555555556, 0.777777777777778, 
+## 0.555555555555556, 0.666666666666667, 0.777777777777778, 0.888888888888889, 
+## 0.777777777777778, 0.444444444444444, 0.666666666666667, 0.666666666666667, 
+## 0.222222222222222, 0.777777777777778, 0.777777777777778, 0.555555555555556, 
+## 0.444444444444444, 0.444444444444444, 0.888888888888889, 0.666666666666667, 
+## 0.555555555555556, 0.777777777777778, 0.888888888888889, 0.666666666666667, 
+## 0.666666666666667, 0.777777777777778, 0.222222222222222, 0.666666666666667, 
+## 0.888888888888889, 0.111111111111111, 0.888888888888889, 0.555555555555556, 
+## 0.555555555555556, 0.888888888888889, 0.777777777777778, 0.777777777777778, 
+## 0.777777777777778, 0.888888888888889, 1, 0.222222222222222, 0.666666666666667, 
+## 0.888888888888889, 0.777777777777778, 0.888888888888889, 0.555555555555556, 
+## 0.555555555555556, 1, 0.888888888888889, 0.444444444444444, 0.666666666666667, 
+## 0.777777777777778, 1, 0.555555555555556, 0.222222222222222, 0.444444444444444, 
+## 1, 0.222222222222222, 1, 0.111111111111111, 0.333333333333333, 
+## 0.222222222222222, 0.888888888888889, 0.555555555555556, 0.666666666666667, 
+## 0.888888888888889, 0.222222222222222, 0.888888888888889, 0.222222222222222, 
+## 0.666666666666667, 0.444444444444444, 0.333333333333333, 0.555555555555556, 
+## 0.888888888888889, 0.666666666666667, 0.333333333333333, 0, 0.888888888888889, 
+## 0.222222222222222, 0.222222222222222, 0.555555555555556, 0.333333333333333, 
+## 0.555555555555556, 1, 0.666666666666667, 0.222222222222222, 0.222222222222222, 
+## 0.555555555555556, 0.777777777777778, 0.666666666666667, 0, 1, 
+## 0.444444444444444, 0.333333333333333, 0.222222222222222, 0.555555555555556, 
+## 0.333333333333333, 0.333333333333333, 0.666666666666667, 1, 0.666666666666667, 
+## 0.888888888888889, 0.222222222222222, 0.555555555555556, 0.111111111111111, 
+## 0.444444444444444, 0.222222222222222, 0.222222222222222, 0.444444444444444, 
+## 0.222222222222222, 0.777777777777778, 0.444444444444444, 0.666666666666667, 
+## 0.666666666666667, 0.333333333333333, 0.555555555555556, 0.555555555555556, 
+## 0.111111111111111, 0.333333333333333, 0.777777777777778, 0.888888888888889, 
+## 0.555555555555556, 0.333333333333333, 0.333333333333333, 0.444444444444444, 
+## 1, 0.888888888888889, 0.777777777777778, 0.111111111111111, 0.222222222222222, 
+## 0.111111111111111, 0.777777777777778, 0.555555555555556, 0.555555555555556, 
+## 1, 1, 0.222222222222222, 0.333333333333333, 0.444444444444444, 
+## 0.333333333333333, 0.666666666666667, 0.666666666666667, 0.111111111111111, 
+## 0.111111111111111, 0.111111111111111, 0, 0.777777777777778, 0.666666666666667, 
+## 0.222222222222222, 0.888888888888889, 0.888888888888889, 0.333333333333333, 
+## 0.222222222222222, 0.444444444444444, 0.222222222222222, 0.111111111111111, 
+## 0.555555555555556, 1, 0.444444444444444, 0.222222222222222, 0.666666666666667, 
+## 0.666666666666667, 0.888888888888889, 0.666666666666667, 0.555555555555556, 
+## 0.444444444444444, 0.777777777777778, 0, 0.666666666666667, 0.666666666666667, 
+## 0.444444444444444, 0.888888888888889, 0.888888888888889, 0.555555555555556, 
+## 0.333333333333333, 0.222222222222222, 0.333333333333333, 0.666666666666667, 
+## 0.666666666666667, 0.444444444444444, 0.777777777777778, 0.888888888888889, 
+## 0.111111111111111, 0.333333333333333, 0.555555555555556, 0.111111111111111, 
+## 0.888888888888889, 0.111111111111111, 0.555555555555556, 0.444444444444444, 
+## 0.111111111111111, 0.222222222222222, 0.555555555555556, 0.666666666666667, 
+## 0.444444444444444, 0.444444444444444, 0.444444444444444, 0.222222222222222, 
+## 0.555555555555556, 0.555555555555556, 0.666666666666667, 0.111111111111111, 
+## 0.222222222222222, 0.777777777777778, 0, 1, 0.777777777777778, 
+## 0.222222222222222, 0.444444444444444, 0.111111111111111, 0.222222222222222, 
+## 0.555555555555556, 0.444444444444444, 0.555555555555556, 0.777777777777778, 
+## 0.666666666666667, 0.333333333333333, 0.111111111111111, 0.666666666666667, 
+## 0.111111111111111, 0.222222222222222, 0.555555555555556, 0.777777777777778, 
+## 0, 0.888888888888889, 0.666666666666667, 0, 0.444444444444444, 
+## 0.444444444444444, 0.888888888888889, 0.444444444444444, 0.111111111111111, 
+## 0.666666666666667, 0.666666666666667, 0.222222222222222, 0.888888888888889, 
+## 0.333333333333333, 0.555555555555556, 0.555555555555556, 0.222222222222222, 
+## 0.333333333333333, 0.222222222222222, 0.555555555555556, 0.555555555555556, 
+## 0.666666666666667, 0.555555555555556, 0.111111111111111, 0.111111111111111, 
+## 0.444444444444444, 0.444444444444444, 0.777777777777778, 0.777777777777778, 
+## 0.111111111111111, 0.666666666666667, 0.222222222222222, 0.555555555555556, 
+## 0.222222222222222, 0.555555555555556, 0.444444444444444, 0.222222222222222, 
+## 0.111111111111111, 0.333333333333333, 0, 0.333333333333333, 0.222222222222222, 
+## 0.333333333333333, 0.333333333333333, 0.555555555555556, 0.666666666666667, 
+## 0.666666666666667, 0.555555555555556, 0.888888888888889, 0.666666666666667, 
+## 0.222222222222222, 0.111111111111111, 0.444444444444444, 0.333333333333333, 
+## 1, 0, 0.333333333333333, 0.333333333333333, 0.555555555555556, 
+## 0.777777777777778, 0.555555555555556, 0.111111111111111, 0.333333333333333, 
+## 0.666666666666667, 0.333333333333333, 0.666666666666667, 0.444444444444444, 
+## 0.222222222222222, 0.444444444444444, 0.333333333333333, 0.222222222222222, 
+## 0.555555555555556, 0.222222222222222, 0.888888888888889, 0.111111111111111, 
+## 0.888888888888889, 0.666666666666667, 0.555555555555556, 0.333333333333333, 
+## 0.444444444444444, 0.555555555555556, 0.888888888888889, 0.777777777777778, 
+## 0.333333333333333, 0.333333333333333, 0.333333333333333, 0.555555555555556, 
+## 0.555555555555556, 0.111111111111111, 0.555555555555556, 0.777777777777778, 
+## 0.222222222222222, 0.444444444444444, 0.666666666666667, 0.333333333333333, 
+## 0.222222222222222, 0, 0.333333333333333), .outcome = c(1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+## 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+## 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)), control = list(minsplit = 20, 
+##     minbucket = 7, cp = 0, maxcompete = 4, maxsurrogate = 5, 
+##     usesurrogate = 2, surrogatestyle = 0, maxdepth = 30, xval = 0))
+##   n= 768 
+## 
+##           CP nsplit rel error
+## 1 0.35074627      0 1.0000000
+## 2 0.02238806      1 0.6492537
+## 
+## Variable importance
+## lda glm knn 
+##  39  38  24 
+## 
+## Node number 1: 768 observations,    complexity param=0.3507463
+##   predicted class=neg  expected loss=0.3489583  P(node) =1
+##     class counts:   500   268
+##    probabilities: 0.651 0.349 
+##   left son=2 (460 obs) right son=3 (308 obs)
+##   Primary splits:
+##       lda &lt; 0.6623768 to the right, improve=94.81988, (0 missing)
+##       glm &lt; 0.6494944 to the right, improve=92.00008, (0 missing)
+##       knn &lt; 0.7222222 to the right, improve=59.80801, (0 missing)
+##   Surrogate splits:
+##       glm &lt; 0.6515483 to the right, agree=0.990, adj=0.974, (0 split)
+##       knn &lt; 0.6111111 to the right, agree=0.846, adj=0.617, (0 split)
+## 
+## Node number 2: 460 observations
+##   predicted class=neg  expected loss=0.1456522  P(node) =0.5989583
+##     class counts:   393    67
+##    probabilities: 0.854 0.146 
+## 
+## Node number 3: 308 observations
+##   predicted class=pos  expected loss=0.3474026  P(node) =0.4010417
+##     class counts:   107   201
+##    probabilities: 0.347 0.653</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Blending (linear combination of models)</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(caretEnsemble)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">returnData =</span> <span class="ot">TRUE</span>,
+  <span class="dt">returnResamp =</span> <span class="st">&quot;final&quot;</span>, <span class="dt">savePredictions =</span> <span class="ot">FALSE</span>, <span class="dt">classProbs=</span><span class="ot">TRUE</span>)
+<span class="co"># train a list of models</span>
+methodList &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;glm&#39;</span>, <span class="st">&#39;lda&#39;</span>, <span class="st">&#39;knn&#39;</span>)
+models &lt;-<span class="st"> </span><span class="kw">caretList</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">trControl=</span>train_control, <span class="dt">methodList=</span>methodList)
+<span class="co"># create ensemble of trained models</span>
+ensemble &lt;-<span class="st"> </span><span class="kw">caretEnsemble</span>(models)
+<span class="co"># summarize ensemble</span>
+<span class="kw">summary</span>(ensemble)</code></pre></div>
+<pre><code>## The following models were ensembled: glm, lda, knn 
+## They were weighted: 
+## 2.4958 -9.1523 4.4327 -0.3551
+## The resulting Accuracy is: 0.7672
+## The fit for each individual model on the Accuracy is: 
+##  method  Accuracy AccuracySD
+##     glm 0.7746070 0.04546725
+##     lda 0.7693951 0.04383666
+##     knn 0.7343643 0.06912261</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Bagging or Bootstrap Aggregation of Decision Trees</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(ipred)
+<span class="kw">library</span>(rpart)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># bag the decision tree</span>
+model &lt;-<span class="st"> </span><span class="kw">bagging</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">nbagg=</span><span class="dv">25</span>, <span class="dt">coob=</span><span class="ot">TRUE</span>)
+<span class="co"># make predictions on the training dataset</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(model, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 498   1
+##         pos   2 267</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="improve-accuracy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tymenschreuder/project-template-analysis/edit/gh-pages/06-ImproveAccuracy.Rmd",
+"text": "Edit"
+},
+"download": ["project-template-analysis.pdf", "project-template-analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Template Analysis</title>
+  <meta name="description" content="Recipes for Machine Learning Project">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Project Template Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Recipes for Machine Learning Project" />
+  <meta name="github-repo" content="tymenschreuder/project-template-analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Project Template Analysis" />
+  
+  <meta name="twitter:description" content="Recipes for Machine Learning Project" />
+  
+
+<meta name="author" content="Tymen Schreuder">
+
+
+<meta name="date" content="2017-07-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="evaluate-algorithms.html">
+<link rel="next" href="improve-accuracy-1.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Project Template Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction: BLueprint and Recipes for Stats analytic Project</a></li>
+<li class="chapter" data-level="1" data-path="prepare-problem.html"><a href="prepare-problem.html"><i class="fa fa-check"></i><b>1</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="1.1" data-path="prepare-problem.html"><a href="prepare-problem.html#load-packages"><i class="fa fa-check"></i><b>1.1</b> Load packages</a></li>
+<li class="chapter" data-level="1.2" data-path="prepare-problem.html"><a href="prepare-problem.html#load-dataset"><i class="fa fa-check"></i><b>1.2</b> Load dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html"><i class="fa fa-check"></i><b>2</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="2.1" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.1</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-univariate"><i class="fa fa-check"></i><b>2.2</b> Data visualizations Univariate</a></li>
+<li class="chapter" data-level="2.3" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-projection"><i class="fa fa-check"></i><b>2.3</b> Data visualizations projection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prepare-data.html"><a href="prepare-data.html"><i class="fa fa-check"></i><b>3</b> Prepare Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="prepare-data.html"><a href="prepare-data.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="3.2" data-path="prepare-data.html"><a href="prepare-data.html#feature-selection"><i class="fa fa-check"></i><b>3.2</b> Feature Selection</a></li>
+<li class="chapter" data-level="3.3" data-path="prepare-data.html"><a href="prepare-data.html#data-transforms"><i class="fa fa-check"></i><b>3.3</b> Data Transforms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html"><i class="fa fa-check"></i><b>4</b> 04 Evaluate Algorithms</a><ul>
+<li class="chapter" data-level="4.1" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#spot-check-algorithms"><i class="fa fa-check"></i><b>4.1</b> Spot-Check Algorithms</a></li>
+<li class="chapter" data-level="4.2" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-regression"><i class="fa fa-check"></i><b>4.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="4.3" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#penalized-linear-regression"><i class="fa fa-check"></i><b>4.3</b> Penalized Linear Regression</a></li>
+<li class="chapter" data-level="4.4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-classification"><i class="fa fa-check"></i><b>4.4</b> Linear Classification</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#nonlinear-classification"><i class="fa fa-check"></i><b>4.5</b> NonLinear Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="improve-accuracy.html"><a href="improve-accuracy.html"><i class="fa fa-check"></i><b>5</b> 06 Improve Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="improve-accuracy.html"><a href="improve-accuracy.html#metrics"><i class="fa fa-check"></i><b>5.1</b> Metrics</a></li>
+<li class="chapter" data-level="5.2" data-path="improve-accuracy.html"><a href="improve-accuracy.html#resampling-methods"><i class="fa fa-check"></i><b>5.2</b> Resampling Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="improve-accuracy.html"><a href="improve-accuracy.html#model-selection"><i class="fa fa-check"></i><b>5.3</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html"><i class="fa fa-check"></i><b>6</b> Improve Accuracy</a><ul>
+<li class="chapter" data-level="6.1" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#tuning"><i class="fa fa-check"></i><b>6.1</b> Tuning</a></li>
+<li class="chapter" data-level="6.2" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#ensembles"><i class="fa fa-check"></i><b>6.2</b> Ensembles</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/tymenschreuder/project-template-analysis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Project Template Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="improve-accuracy" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> 06 Improve Accuracy</h1>
+<div id="metrics" class="section level2">
+<h2><span class="header-section-number">5.1</span> Metrics</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ROC: AUC, sensitivity, specificity metrics</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(datasets)
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>, <span class="dt">classProbs=</span><span class="ot">TRUE</span>, <span class="dt">summaryFunction=</span>twoClassSummary)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;ROC&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Generalized Linear Model 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results:
+## 
+##   ROC        Sens   Spec     
+##   0.8336003  0.882  0.5600978</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># RMSE metric</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(Employed<span class="op">~</span>., <span class="dt">data=</span>longley, <span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Linear Regression 
+## 
+## 16 samples
+##  6 predictor
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 12, 12, 14, 13, 13 
+## Resampling results:
+## 
+##   RMSE       Rsquared 
+##   0.3868618  0.9883114
+## 
+## Tuning parameter &#39;intercept&#39; was held constant at a value of TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Accuracy metric</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Generalized Linear Model 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7695442  0.4656824</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Kappa metric</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Kappa&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Generalized Linear Model 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7695442  0.4656824</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Rsquared metric</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(Employed<span class="op">~</span>., <span class="dt">data=</span>longley, <span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Rsquared&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Linear Regression 
+## 
+## 16 samples
+##  6 predictor
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 12, 12, 14, 13, 13 
+## Resampling results:
+## 
+##   RMSE       Rsquared 
+##   0.3868618  0.9883114
+## 
+## Tuning parameter &#39;intercept&#39; was held constant at a value of TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># MultiNomialLogLoss Metric</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># prepare resampling method</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>, <span class="dt">classProbs=</span><span class="ot">TRUE</span>, <span class="dt">summaryFunction=</span>mnLogLoss)
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;logLoss&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># display results</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## CART 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 120, 120, 120, 120, 120 
+## Resampling results across tuning parameters:
+## 
+##   cp    logLoss  
+##   0.00  0.4105613
+##   0.44  0.6840517
+##   0.50  1.0986123
+## 
+## logLoss was used to select the optimal model using  the smallest value.
+## The final value used for the model was cp = 0.</code></pre>
+</div>
+<div id="resampling-methods" class="section level2">
+<h2><span class="header-section-number">5.2</span> Resampling Methods</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimate accuracy using a train/test split.</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(klaR)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># define an 80%/20% train/test split of the dataset</span>
+split=<span class="fl">0.80</span>
+trainIndex &lt;-<span class="st"> </span><span class="kw">createDataPartition</span>(iris<span class="op">$</span>Species, <span class="dt">p=</span>split, <span class="dt">list=</span><span class="ot">FALSE</span>)
+data_train &lt;-<span class="st"> </span>iris[ trainIndex,]
+data_test  &lt;-<span class="st"> </span>iris[<span class="op">-</span>trainIndex,]
+<span class="co"># train a naive bayes model</span>
+model &lt;-<span class="st"> </span><span class="kw">NaiveBayes</span>(Species<span class="op">~</span>., <span class="dt">data=</span>data_train)
+<span class="co"># make predictions</span>
+x_test &lt;-<span class="st"> </span>data_test[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+y_test &lt;-<span class="st"> </span>data_test[,<span class="dv">5</span>]
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(model, x_test)
+<span class="co"># summarize results</span>
+<span class="kw">confusionMatrix</span>(predictions<span class="op">$</span>class, y_test)</code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##             Reference
+## Prediction   setosa versicolor virginica
+##   setosa         10          0         0
+##   versicolor      0         10         0
+##   virginica       0          0        10
+## 
+## Overall Statistics
+##                                      
+##                Accuracy : 1          
+##                  95% CI : (0.8843, 1)
+##     No Information Rate : 0.3333     
+##     P-Value [Acc &gt; NIR] : 4.857e-15  
+##                                      
+##                   Kappa : 1          
+##  Mcnemar&#39;s Test P-Value : NA         
+## 
+## Statistics by Class:
+## 
+##                      Class: setosa Class: versicolor Class: virginica
+## Sensitivity                 1.0000            1.0000           1.0000
+## Specificity                 1.0000            1.0000           1.0000
+## Pos Pred Value              1.0000            1.0000           1.0000
+## Neg Pred Value              1.0000            1.0000           1.0000
+## Prevalence                  0.3333            0.3333           0.3333
+## Detection Rate              0.3333            0.3333           0.3333
+## Detection Prevalence        0.3333            0.3333           0.3333
+## Balanced Accuracy           1.0000            1.0000           1.0000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimate accuracy using a k-fold cross validation.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>)
+<span class="co"># fix the parameters of the algorithm</span>
+grid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">fL=</span><span class="kw">c</span>(<span class="dv">0</span>), <span class="dt">usekernel=</span><span class="kw">c</span>(<span class="ot">FALSE</span>))
+
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">trControl=</span>train_control, <span class="dt">method=</span><span class="st">&quot;nb&quot;</span>)<span class="co">#tunegrid = grid</span>
+<span class="co"># summarize results</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold) 
+## Summary of sample sizes: 135, 135, 135, 135, 135, 135, ... 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy   Kappa
+##   FALSE      0.9533333  0.93 
+##    TRUE      0.9600000  0.94 
+## 
+## Tuning parameter &#39;fL&#39; was held constant at a value of 0
+## Tuning
+##  parameter &#39;adjust&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were fL = 0, usekernel = TRUE
+##  and adjust = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimate accuracy using repeated k-fold cross validation.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">trControl=</span>train_control, <span class="dt">method=</span><span class="st">&quot;nb&quot;</span>)
+<span class="co"># summarize results</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 3 times) 
+## Summary of sample sizes: 135, 135, 135, 135, 135, 135, ... 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy   Kappa    
+##   FALSE      0.9466667  0.9200000
+##    TRUE      0.9555556  0.9333333
+## 
+## Tuning parameter &#39;fL&#39; was held constant at a value of 0
+## Tuning
+##  parameter &#39;adjust&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were fL = 0, usekernel = TRUE
+##  and adjust = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimate accuracy using the bootstrap.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;boot&quot;</span>, <span class="dt">number=</span><span class="dv">100</span>)
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">trControl=</span>train_control, <span class="dt">method=</span><span class="st">&quot;nb&quot;</span>)
+<span class="co"># summarize results</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Bootstrapped (100 reps) 
+## Summary of sample sizes: 150, 150, 150, 150, 150, 150, ... 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy   Kappa    
+##   FALSE      0.9523397  0.9277022
+##    TRUE      0.9537120  0.9297424
+## 
+## Tuning parameter &#39;fL&#39; was held constant at a value of 0
+## Tuning
+##  parameter &#39;adjust&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were fL = 0, usekernel = TRUE
+##  and adjust = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimate accuracy using a leave one out cross validation.</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(caret)
+<span class="co"># load the iris dataset</span>
+<span class="kw">data</span>(iris)
+<span class="co"># define training control</span>
+train_control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;LOOCV&quot;</span>)
+<span class="co"># train the model</span>
+model &lt;-<span class="st"> </span><span class="kw">train</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">trControl=</span>train_control, <span class="dt">method=</span><span class="st">&quot;nb&quot;</span>)
+<span class="co"># summarize results</span>
+<span class="kw">print</span>(model)</code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 150 samples
+##   4 predictor
+##   3 classes: &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39; 
+## 
+## No pre-processing
+## Resampling: Leave-One-Out Cross-Validation 
+## Summary of sample sizes: 149, 149, 149, 149, 149, 149, ... 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy   Kappa
+##   FALSE      0.9533333  0.93 
+##    TRUE      0.9600000  0.94 
+## 
+## Tuning parameter &#39;fL&#39; was held constant at a value of 0
+## Tuning
+##  parameter &#39;adjust&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were fL = 0, usekernel = TRUE
+##  and adjust = 1.</code></pre>
+</div>
+<div id="model-selection" class="section level2">
+<h2><span class="header-section-number">5.3</span> Model Selection</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using box and whisker plots</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># box and whisker plots to compare models</span>
+scales &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>))
+<span class="kw">bwplot</span>(results, <span class="dt">scales=</span>scales)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using density plots plots</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># density plots of accuracy</span>
+scales &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>))
+<span class="kw">densityplot</span>(results, <span class="dt">scales=</span>scales, <span class="dt">pch =</span> <span class="st">&quot;|&quot;</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using dotplots</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># dot plots of accuracy</span>
+scales &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>))
+<span class="kw">dotplot</span>(results, <span class="dt">scales=</span>scales)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using parallel plots</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># parallel plots to compare models</span>
+<span class="kw">parallelplot</span>(results)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-4.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using scatterplot matrix</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># pair-wise scatterplots of predictions to compare models</span>
+<span class="kw">splom</span>(results)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-5.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># pair-wise scatterplots of accuracy measures to compare models</span>
+<span class="kw">splom</span>(results, <span class="dt">variables=</span><span class="st">&quot;metrics&quot;</span>)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-6.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using a table summary</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># summarize differences between modes</span>
+<span class="kw">summary</span>(results)</code></pre></div>
+<pre><code>## 
+## Call:
+## summary.resamples(object = results)
+## 
+## Models: CART, LDA, SVM, KNN, RF 
+## Number of resamples: 30 
+## 
+## Accuracy 
+##           Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA&#39;s
+## CART 0.6233766 0.7114662 0.7402597 0.7381864 0.7759740 0.8441558    0
+## LDA  0.6710526 0.7532468 0.7662338 0.7759455 0.8051948 0.8701299    0
+## SVM  0.6710526 0.7402597 0.7582023 0.7650946 0.7889610 0.8961039    0
+## KNN  0.6184211 0.6983510 0.7320574 0.7299385 0.7532468 0.8181818    0
+## RF   0.6842105 0.7296651 0.7582023 0.7625370 0.7922078 0.8571429    0
+## 
+## Kappa 
+##           Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA&#39;s
+## CART 0.1584699 0.3295590 0.3765182 0.3934073 0.4684788 0.6393443    0
+## LDA  0.2484177 0.4195842 0.4515939 0.4800991 0.5511677 0.7047546    0
+## SVM  0.2187500 0.3888801 0.4167479 0.4520197 0.5002572 0.7638037    0
+## KNN  0.1112903 0.3228267 0.3866876 0.3818558 0.4382002 0.5866564    0
+## RF   0.2852665 0.3860329 0.4552584 0.4613026 0.5168514 0.6780692    0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare models using xyplot</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># xyplot plots to compare models</span>
+<span class="kw">xyplot</span>(results, <span class="dt">models=</span><span class="kw">c</span>(<span class="st">&quot;LDA&quot;</span>, <span class="st">&quot;SVM&quot;</span>))</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-7.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculate statistical significance of difference between model predictions</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(caret)
+<span class="co"># load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># prepare training scheme</span>
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;repeatedcv&quot;</span>, <span class="dt">number=</span><span class="dv">10</span>, <span class="dt">repeats=</span><span class="dv">3</span>)
+<span class="co"># CART</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.cart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># LDA</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># SVM</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.svm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># kNN</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># Random Forest</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+fit.rf &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># collect resamples</span>
+results &lt;-<span class="st"> </span><span class="kw">resamples</span>(<span class="kw">list</span>(<span class="dt">CART=</span>fit.cart, <span class="dt">LDA=</span>fit.lda, <span class="dt">SVM=</span>fit.svm, <span class="dt">KNN=</span>fit.knn, <span class="dt">RF=</span>fit.rf))
+<span class="co"># difference in model predictions</span>
+diffs &lt;-<span class="st"> </span><span class="kw">diff</span>(results)
+<span class="co"># summarize p-values for pair-wise comparisons</span>
+<span class="kw">summary</span>(diffs)</code></pre></div>
+<pre><code>## 
+## Call:
+## summary.diff.resamples(object = diffs)
+## 
+## p-value adjustment: bonferroni 
+## Upper diagonal: estimates of the difference
+## Lower diagonal: p-value for H0: difference = 0
+## 
+## Accuracy 
+##      CART      LDA       SVM       KNN       RF       
+## CART           -0.037759 -0.026908  0.008248 -0.024351
+## LDA  0.0050068            0.010851  0.046007  0.013409
+## SVM  0.0919580 0.3390336            0.035156  0.002558
+## KNN  1.0000000 1.218e-05 0.0007092           -0.032599
+## RF   0.0974572 0.2416366 1.0000000 0.0016066          
+## 
+## Kappa 
+##      CART      LDA       SVM       KNN       RF       
+## CART           -0.086692 -0.058612  0.011552 -0.067895
+## LDA  0.0015478            0.028079  0.098243  0.018796
+## SVM  0.0839950 0.2217402            0.070164 -0.009283
+## KNN  1.0000000 4.122e-05 0.0054686           -0.079447
+## RF   0.0129477 1.0000000 1.0000000 0.0006918</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot of differences</span>
+scales &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&quot;free&quot;</span>))
+<span class="kw">bwplot</span>(diffs, <span class="dt">scales=</span>scales)</code></pre></div>
+<p><img src="project-template-analysis_files/figure-html/model-selection-8.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># t-test between two models</span>
+<span class="kw">compare_models</span>(fit.svm, fit.lda)</code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  x
+## t = -2.2266, df = 29, p-value = 0.0339
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.0208181758 -0.0008838064
+## sample estimates:
+##   mean of x 
+## -0.01085099</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="evaluate-algorithms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="improve-accuracy-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tymenschreuder/project-template-analysis/edit/gh-pages/05-EvaluateModels.Rmd",
+"text": "Edit"
+},
+"download": ["project-template-analysis.pdf", "project-template-analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

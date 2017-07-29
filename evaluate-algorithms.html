@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Template Analysis</title>
+  <meta name="description" content="Recipes for Machine Learning Project">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Project Template Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Recipes for Machine Learning Project" />
+  <meta name="github-repo" content="tymenschreuder/project-template-analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Project Template Analysis" />
+  
+  <meta name="twitter:description" content="Recipes for Machine Learning Project" />
+  
+
+<meta name="author" content="Tymen Schreuder">
+
+
+<meta name="date" content="2017-07-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="prepare-data.html">
+<link rel="next" href="improve-accuracy.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Project Template Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction: BLueprint and Recipes for Stats analytic Project</a></li>
+<li class="chapter" data-level="1" data-path="prepare-problem.html"><a href="prepare-problem.html"><i class="fa fa-check"></i><b>1</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="1.1" data-path="prepare-problem.html"><a href="prepare-problem.html#load-packages"><i class="fa fa-check"></i><b>1.1</b> Load packages</a></li>
+<li class="chapter" data-level="1.2" data-path="prepare-problem.html"><a href="prepare-problem.html#load-dataset"><i class="fa fa-check"></i><b>1.2</b> Load dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html"><i class="fa fa-check"></i><b>2</b> Prepare Problem</a><ul>
+<li class="chapter" data-level="2.1" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.1</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-univariate"><i class="fa fa-check"></i><b>2.2</b> Data visualizations Univariate</a></li>
+<li class="chapter" data-level="2.3" data-path="prepare-problem-1.html"><a href="prepare-problem-1.html#data-visualizations-projection"><i class="fa fa-check"></i><b>2.3</b> Data visualizations projection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prepare-data.html"><a href="prepare-data.html"><i class="fa fa-check"></i><b>3</b> Prepare Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="prepare-data.html"><a href="prepare-data.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="3.2" data-path="prepare-data.html"><a href="prepare-data.html#feature-selection"><i class="fa fa-check"></i><b>3.2</b> Feature Selection</a></li>
+<li class="chapter" data-level="3.3" data-path="prepare-data.html"><a href="prepare-data.html#data-transforms"><i class="fa fa-check"></i><b>3.3</b> Data Transforms</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html"><i class="fa fa-check"></i><b>4</b> 04 Evaluate Algorithms</a><ul>
+<li class="chapter" data-level="4.1" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#spot-check-algorithms"><i class="fa fa-check"></i><b>4.1</b> Spot-Check Algorithms</a></li>
+<li class="chapter" data-level="4.2" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-regression"><i class="fa fa-check"></i><b>4.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="4.3" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#penalized-linear-regression"><i class="fa fa-check"></i><b>4.3</b> Penalized Linear Regression</a></li>
+<li class="chapter" data-level="4.4" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#linear-classification"><i class="fa fa-check"></i><b>4.4</b> Linear Classification</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluate-algorithms.html"><a href="evaluate-algorithms.html#nonlinear-classification"><i class="fa fa-check"></i><b>4.5</b> NonLinear Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="improve-accuracy.html"><a href="improve-accuracy.html"><i class="fa fa-check"></i><b>5</b> 06 Improve Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="improve-accuracy.html"><a href="improve-accuracy.html#metrics"><i class="fa fa-check"></i><b>5.1</b> Metrics</a></li>
+<li class="chapter" data-level="5.2" data-path="improve-accuracy.html"><a href="improve-accuracy.html#resampling-methods"><i class="fa fa-check"></i><b>5.2</b> Resampling Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="improve-accuracy.html"><a href="improve-accuracy.html#model-selection"><i class="fa fa-check"></i><b>5.3</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html"><i class="fa fa-check"></i><b>6</b> Improve Accuracy</a><ul>
+<li class="chapter" data-level="6.1" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#tuning"><i class="fa fa-check"></i><b>6.1</b> Tuning</a></li>
+<li class="chapter" data-level="6.2" data-path="improve-accuracy-1.html"><a href="improve-accuracy-1.html#ensembles"><i class="fa fa-check"></i><b>6.2</b> Ensembles</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/tymenschreuder/project-template-analysis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Project Template Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="evaluate-algorithms" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> 04 Evaluate Algorithms</h1>
+<div id="spot-check-algorithms" class="section level2">
+<h2><span class="header-section-number">4.1</span> Spot-Check Algorithms</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Minimum examples of algorithm spot checks, both direct and with caret.</span>
+
+<span class="co"># Linear Regression</span>
+
+<span class="co"># lm direct use</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">lm</span>(medv<span class="op">~</span>., BostonHousing)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = medv ~ ., data = BostonHousing)
+## 
+## Coefficients:
+## (Intercept)         crim           zn        indus        chas1  
+##   3.646e+01   -1.080e-01    4.642e-02    2.056e-02    2.687e+00  
+##         nox           rm          age          dis          rad  
+##  -1.777e+01    3.810e+00    6.922e-04   -1.476e+00    3.060e-01  
+##         tax      ptratio            b        lstat  
+##  -1.233e-02   -9.527e-01    9.312e-03   -5.248e-01</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, BostonHousing)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((BostonHousing<span class="op">$</span>medv <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 21.89483</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># lm in caret</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.lm &lt;-<span class="st"> </span><span class="kw">train</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.lm)</code></pre></div>
+<pre><code>## Linear Regression 
+## 
+## 506 samples
+##  13 predictor
+## 
+## Pre-processing: centered (13), scaled (13) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 405, 405, 403, 405, 406 
+## Resampling results:
+## 
+##   RMSE      Rsquared 
+##   4.822048  0.7322594
+## 
+## Tuning parameter &#39;intercept&#39; was held constant at a value of TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Logistic Regression</span>
+
+<span class="co"># glm direct use</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glm</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">family=</span><span class="kw">binomial</span>(<span class="dt">link=</span><span class="st">&#39;logit&#39;</span>))
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glm(formula = diabetes ~ ., family = binomial(link = &quot;logit&quot;), 
+##     data = PimaIndiansDiabetes)
+## 
+## Coefficients:
+## (Intercept)     pregnant      glucose     pressure      triceps  
+##   -8.404696     0.123182     0.035164    -0.013296     0.000619  
+##     insulin         mass     pedigree          age  
+##   -0.001192     0.089701     0.945180     0.014869  
+## 
+## Degrees of Freedom: 767 Total (i.e. Null);  759 Residual
+## Null Deviance:       993.5 
+## Residual Deviance: 723.4     AIC: 741.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+probabilities &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">type=</span><span class="st">&#39;response&#39;</span>)
+predictions &lt;-<span class="st"> </span><span class="kw">ifelse</span>(probabilities <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>,<span class="st">&#39;pos&#39;</span>,<span class="st">&#39;neg&#39;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 445 112
+##         pos  55 156</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># glm in caret</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.glm &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.glm)</code></pre></div>
+<pre><code>## Generalized Linear Model 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## Pre-processing: centered (8), scaled (8) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7695442  0.4656824</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Linear Discriminant Analysis</span>
+
+<span class="co"># lda direct</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(MASS)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">lda</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call:
+## lda(diabetes ~ ., data = PimaIndiansDiabetes)
+## 
+## Prior probabilities of groups:
+##       neg       pos 
+## 0.6510417 0.3489583 
+## 
+## Group means:
+##     pregnant  glucose pressure  triceps  insulin     mass pedigree
+## neg 3.298000 109.9800 68.18400 19.66400  68.7920 30.30420 0.429734
+## pos 4.865672 141.2575 70.82463 22.16418 100.3358 35.14254 0.550500
+##          age
+## neg 31.19000
+## pos 37.06716
+## 
+## Coefficients of linear discriminants:
+##                    LD1
+## pregnant  0.0938638298
+## glucose   0.0269863520
+## pressure -0.0106293929
+## triceps   0.0007043468
+## insulin  -0.0008229296
+## mass      0.0603702056
+## pedigree  0.6711517147
+## age       0.0119490869</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>])<span class="op">$</span>class
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 446 112
+##         pos  54 156</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># lda in caret</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.lda &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;lda&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.lda)</code></pre></div>
+<pre><code>## Linear Discriminant Analysis 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## Pre-processing: centered (8), scaled (8) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results:
+## 
+##   Accuracy   Kappa    
+##   0.7695527  0.4665998</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Regularized Regression</span>
+
+<span class="co"># glmnet direct classification</span>
+
+<span class="co"># load the library</span>
+<span class="kw">library</span>(glmnet)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(PimaIndiansDiabetes[,<span class="dv">9</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glmnet</span>(x, y, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>, <span class="dt">lambda=</span><span class="fl">0.001</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glmnet(x = x, y = y, family = &quot;binomial&quot;, alpha = 0.5, lambda = 0.001) 
+## 
+##      Df   %Dev Lambda
+## [1,]  8 0.2718  0.001</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x, <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 446 112
+##         pos  54 156</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># glmnet direct regression</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(glmnet)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(BostonHousing)
+BostonHousing<span class="op">$</span>chas &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(BostonHousing<span class="op">$</span>chas))
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(BostonHousing[,<span class="dv">1</span><span class="op">:</span><span class="dv">13</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(BostonHousing[,<span class="dv">14</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glmnet</span>(x, y, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>, <span class="dt">lambda=</span><span class="fl">0.001</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glmnet(x = x, y = y, family = &quot;gaussian&quot;, alpha = 0.5, lambda = 0.001) 
+## 
+##      Df   %Dev Lambda
+## [1,] 13 0.7406  0.001</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((y <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 21.89497</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># glmnet in caret classification</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(glmnet)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.glmnet &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;glmnet&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.glmnet)</code></pre></div>
+<pre><code>## glmnet 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## Pre-processing: centered (8), scaled (8) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results across tuning parameters:
+## 
+##   alpha  lambda        Accuracy   Kappa    
+##   0.10   0.0004447834  0.7708514  0.4691039
+##   0.10   0.0044478343  0.7695442  0.4656452
+##   0.10   0.0444783425  0.7682285  0.4550876
+##   0.55   0.0004447834  0.7708514  0.4691039
+##   0.55   0.0044478343  0.7721416  0.4716536
+##   0.55   0.0444783425  0.7682370  0.4512513
+##   1.00   0.0004447834  0.7708429  0.4691785
+##   1.00   0.0044478343  0.7708344  0.4682322
+##   1.00   0.0444783425  0.7629997  0.4367982
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were alpha = 0.55 and lambda
+##  = 0.004447834.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># glmnet in caret regression</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="kw">library</span>(glmnet)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.glmnet &lt;-<span class="st"> </span><span class="kw">train</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">method=</span><span class="st">&quot;glmnet&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.glmnet)</code></pre></div>
+<pre><code>## glmnet 
+## 
+## 506 samples
+##  13 predictor
+## 
+## Pre-processing: centered (13), scaled (13) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 405, 405, 403, 405, 406 
+## Resampling results across tuning parameters:
+## 
+##   alpha  lambda      RMSE      Rsquared 
+##   0.10   0.01355531  4.821193  0.7323840
+##   0.10   0.13555307  4.823737  0.7321552
+##   0.10   1.35553073  5.009682  0.7157754
+##   0.55   0.01355531  4.821598  0.7322956
+##   0.55   0.13555307  4.855127  0.7289719
+##   0.55   1.35553073  5.330445  0.6844584
+##   1.00   0.01355531  4.821542  0.7322860
+##   1.00   0.13555307  4.919659  0.7219752
+##   1.00   1.35553073  5.517426  0.6741391
+## 
+## RMSE was used to select the optimal model using  the smallest value.
+## The final values used for the model were alpha = 0.1 and lambda
+##  = 0.01355531.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># k-Nearest Neighbors</span>
+
+<span class="co"># knn direct classification</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">knn3</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">k=</span><span class="dv">3</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 3-nearest neighbor classification model
+## Training set class distribution:
+## 
+## neg pos 
+## 500 268</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 459  67
+##         pos  41 201</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># knn direct regression</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(BostonHousing)
+BostonHousing<span class="op">$</span>chas &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(BostonHousing<span class="op">$</span>chas))
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(BostonHousing[,<span class="dv">1</span><span class="op">:</span><span class="dv">13</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(BostonHousing[,<span class="dv">14</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">knnreg</span>(x, y, <span class="dt">k=</span><span class="dv">3</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 3-nearest neighbor regression model</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((BostonHousing<span class="op">$</span>medv <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 17.9939</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># knn in caret classification</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.knn)</code></pre></div>
+<pre><code>## k-Nearest Neighbors 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## Pre-processing: centered (8), scaled (8) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results across tuning parameters:
+## 
+##   k  Accuracy   Kappa    
+##   5  0.7096426  0.3407639
+##   7  0.7200407  0.3649273
+##   9  0.7239453  0.3671314
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final value used for the model was k = 9.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># knn in caret regression</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.knn &lt;-<span class="st"> </span><span class="kw">train</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">method=</span><span class="st">&quot;knn&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">preProc=</span><span class="kw">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>), <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.knn)</code></pre></div>
+<pre><code>## k-Nearest Neighbors 
+## 
+## 506 samples
+##  13 predictor
+## 
+## Pre-processing: centered (13), scaled (13) 
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 405, 405, 403, 405, 406 
+## Resampling results across tuning parameters:
+## 
+##   k  RMSE      Rsquared 
+##   5  4.403596  0.7854028
+##   7  4.563880  0.7714339
+##   9  4.686272  0.7644349
+## 
+## RMSE was used to select the optimal model using  the smallest value.
+## The final value used for the model was k = 5.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Naive Bayes</span>
+
+<span class="co"># naive bayes direct</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(e1071)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">naiveBayes</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Naive Bayes Classifier for Discrete Predictors
+## 
+## Call:
+## naiveBayes.default(x = X, y = Y, laplace = laplace)
+## 
+## A-priori probabilities:
+## Y
+##       neg       pos 
+## 0.6510417 0.3489583 
+## 
+## Conditional probabilities:
+##      pregnant
+## Y         [,1]     [,2]
+##   neg 3.298000 3.017185
+##   pos 4.865672 3.741239
+## 
+##      glucose
+## Y         [,1]     [,2]
+##   neg 109.9800 26.14120
+##   pos 141.2575 31.93962
+## 
+##      pressure
+## Y         [,1]     [,2]
+##   neg 68.18400 18.06308
+##   pos 70.82463 21.49181
+## 
+##      triceps
+## Y         [,1]     [,2]
+##   neg 19.66400 14.88995
+##   pos 22.16418 17.67971
+## 
+##      insulin
+## Y         [,1]      [,2]
+##   neg  68.7920  98.86529
+##   pos 100.3358 138.68912
+## 
+##      mass
+## Y         [,1]     [,2]
+##   neg 30.30420 7.689855
+##   pos 35.14254 7.262967
+## 
+##      pedigree
+## Y         [,1]      [,2]
+##   neg 0.429734 0.2990853
+##   pos 0.550500 0.3723545
+## 
+##      age
+## Y         [,1]     [,2]
+##   neg 31.19000 11.66765
+##   pos 37.06716 10.96825</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 421 104
+##         pos  79 164</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># naive bayes in caret</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.nb &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;nb&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.nb)</code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy   Kappa    
+##   FALSE      0.7500042  0.4350123
+##    TRUE      0.7460997  0.4236266
+## 
+## Tuning parameter &#39;fL&#39; was held constant at a value of 0
+## Tuning
+##  parameter &#39;adjust&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were fL = 0, usekernel = FALSE
+##  and adjust = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Support Vector Machine</span>
+
+<span class="co"># SVM direct classification</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(kernlab)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">ksvm</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">kernel=</span><span class="st">&quot;rbfdot&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Support Vector Machine object of class &quot;ksvm&quot; 
+## 
+## SV type: C-svc  (classification) 
+##  parameter : cost C = 1 
+## 
+## Gaussian Radial Basis kernel function. 
+##  Hyperparameter : sigma =  0.138462840445792 
+## 
+## Number of Support Vectors : 441 
+## 
+## Objective Function Value : -348.8559 
+## Training error : 0.166667</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 465  93
+##         pos  35 175</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># SVM direct regression</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(kernlab)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">ksvm</span>(medv<span class="op">~</span>., BostonHousing, <span class="dt">kernel=</span><span class="st">&quot;rbfdot&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Support Vector Machine object of class &quot;ksvm&quot; 
+## 
+## SV type: eps-svr  (regression) 
+##  parameter : epsilon = 0.1  cost C = 1 
+## 
+## Gaussian Radial Basis kernel function. 
+##  Hyperparameter : sigma =  0.114758032948535 
+## 
+## Number of Support Vectors : 327 
+## 
+## Objective Function Value : -74.5549 
+## Training error : 0.087933</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, BostonHousing)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((BostonHousing<span class="op">$</span>medv <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 7.437927</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># svmRadial in caret classification</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.svmRadial &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.svmRadial)</code></pre></div>
+<pre><code>## Support Vector Machines with Radial Basis Function Kernel 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results across tuning parameters:
+## 
+##   C     Accuracy   Kappa    
+##   0.25  0.7603684  0.4415912
+##   0.50  0.7551906  0.4322310
+##   1.00  0.7604278  0.4458565
+## 
+## Tuning parameter &#39;sigma&#39; was held constant at a value of 0.1178216
+## Accuracy was used to select the optimal model using  the largest value.
+## The final values used for the model were sigma = 0.1178216 and C = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># svmRadial in caret regression</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.svmRadial &lt;-<span class="st"> </span><span class="kw">train</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">method=</span><span class="st">&quot;svmRadial&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.svmRadial)</code></pre></div>
+<pre><code>## Support Vector Machines with Radial Basis Function Kernel 
+## 
+## 506 samples
+##  13 predictor
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 405, 405, 403, 405, 406 
+## Resampling results across tuning parameters:
+## 
+##   C     RMSE      Rsquared 
+##   0.25  4.818004  0.7564430
+##   0.50  4.279601  0.7985729
+##   1.00  3.820843  0.8337146
+## 
+## Tuning parameter &#39;sigma&#39; was held constant at a value of 0.114971
+## RMSE was used to select the optimal model using  the smallest value.
+## The final values used for the model were sigma = 0.114971 and C = 1.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Classification and Regression Trees</span>
+
+<span class="co"># CART direct classification</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(rpart)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">rpart</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## n= 768 
+## 
+## node), split, n, loss, yval, (yprob)
+##       * denotes terminal node
+## 
+##   1) root 768 268 neg (0.65104167 0.34895833)  
+##     2) glucose&lt; 127.5 485  94 neg (0.80618557 0.19381443)  
+##       4) age&lt; 28.5 271  23 neg (0.91512915 0.08487085) *
+##       5) age&gt;=28.5 214  71 neg (0.66822430 0.33177570)  
+##        10) mass&lt; 26.35 41   2 neg (0.95121951 0.04878049) *
+##        11) mass&gt;=26.35 173  69 neg (0.60115607 0.39884393)  
+##          22) glucose&lt; 99.5 55  10 neg (0.81818182 0.18181818) *
+##          23) glucose&gt;=99.5 118  59 neg (0.50000000 0.50000000)  
+##            46) pedigree&lt; 0.561 84  34 neg (0.59523810 0.40476190)  
+##              92) pedigree&lt; 0.2 21   4 neg (0.80952381 0.19047619) *
+##              93) pedigree&gt;=0.2 63  30 neg (0.52380952 0.47619048)  
+##               186) pregnant&gt;=1.5 52  21 neg (0.59615385 0.40384615)  
+##                 372) pressure&gt;=67 40  12 neg (0.70000000 0.30000000) *
+##                 373) pressure&lt; 67 12   3 pos (0.25000000 0.75000000) *
+##               187) pregnant&lt; 1.5 11   2 pos (0.18181818 0.81818182) *
+##            47) pedigree&gt;=0.561 34   9 pos (0.26470588 0.73529412) *
+##     3) glucose&gt;=127.5 283 109 pos (0.38515901 0.61484099)  
+##       6) mass&lt; 29.95 76  24 neg (0.68421053 0.31578947)  
+##        12) glucose&lt; 145.5 41   6 neg (0.85365854 0.14634146) *
+##        13) glucose&gt;=145.5 35  17 pos (0.48571429 0.51428571)  
+##          26) insulin&lt; 14.5 21   8 neg (0.61904762 0.38095238) *
+##          27) insulin&gt;=14.5 14   4 pos (0.28571429 0.71428571) *
+##       7) mass&gt;=29.95 207  57 pos (0.27536232 0.72463768)  
+##        14) glucose&lt; 157.5 115  45 pos (0.39130435 0.60869565)  
+##          28) age&lt; 30.5 50  23 neg (0.54000000 0.46000000)  
+##            56) pressure&gt;=61 40  13 neg (0.67500000 0.32500000)  
+##             112) mass&lt; 41.8 31   7 neg (0.77419355 0.22580645) *
+##             113) mass&gt;=41.8 9   3 pos (0.33333333 0.66666667) *
+##            57) pressure&lt; 61 10   0 pos (0.00000000 1.00000000) *
+##          29) age&gt;=30.5 65  18 pos (0.27692308 0.72307692) *
+##        15) glucose&gt;=157.5 92  12 pos (0.13043478 0.86956522) *</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 449  72
+##         pos  51 196</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CART direct regression</span>
+
+<span class="co"># load the libraries</span>
+<span class="kw">library</span>(rpart)
+<span class="kw">library</span>(mlbench)
+<span class="co"># load data</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">rpart</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">control=</span><span class="kw">rpart.control</span>(<span class="dt">minsplit=</span><span class="dv">5</span>))
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## n= 506 
+## 
+## node), split, n, deviance, yval
+##       * denotes terminal node
+## 
+##  1) root 506 42716.3000 22.53281  
+##    2) rm&lt; 6.941 430 17317.3200 19.93372  
+##      4) lstat&gt;=14.4 175  3373.2510 14.95600  
+##        8) crim&gt;=6.99237 74  1085.9050 11.97838 *
+##        9) crim&lt; 6.99237 101  1150.5370 17.13762 *
+##      5) lstat&lt; 14.4 255  6632.2170 23.34980  
+##       10) dis&gt;=1.38485 250  3721.1630 22.90520  
+##         20) rm&lt; 6.543 195  1636.0670 21.62974 *
+##         21) rm&gt;=6.543 55   643.1691 27.42727 *
+##       11) dis&lt; 1.38485 5   390.7280 45.58000 *
+##    3) rm&gt;=6.941 76  6059.4190 37.23816  
+##      6) rm&lt; 7.437 46  1899.6120 32.11304  
+##       12) crim&gt;=7.393425 3    27.9200 14.40000 *
+##       13) crim&lt; 7.393425 43   864.7674 33.34884 *
+##      7) rm&gt;=7.437 30  1098.8500 45.09667  
+##       14) ptratio&gt;=18.3 3   223.8200 33.30000 *
+##       15) ptratio&lt; 18.3 27   411.1585 46.40741 *</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, BostonHousing[,<span class="dv">1</span><span class="op">:</span><span class="dv">13</span>])
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((BostonHousing<span class="op">$</span>medv <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 12.71556</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rpart in caret classification</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">5</span>)
+fit.rpart &lt;-<span class="st"> </span><span class="kw">train</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;Accuracy&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.rpart)</code></pre></div>
+<pre><code>## CART 
+## 
+## 768 samples
+##   8 predictor
+##   2 classes: &#39;neg&#39;, &#39;pos&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (5 fold) 
+## Summary of sample sizes: 614, 614, 615, 615, 614 
+## Resampling results across tuning parameters:
+## 
+##   cp          Accuracy   Kappa    
+##   0.01741294  0.7486631  0.4354181
+##   0.10447761  0.7395722  0.3922324
+##   0.24253731  0.7161956  0.3034238
+## 
+## Accuracy was used to select the optimal model using  the largest value.
+## The final value used for the model was cp = 0.01741294.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rpart in caret regression</span>
+
+<span class="co"># load libraries</span>
+<span class="kw">library</span>(caret)
+<span class="kw">library</span>(mlbench)
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(BostonHousing)
+<span class="co"># train</span>
+<span class="kw">set.seed</span>(<span class="dv">7</span>)
+control &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method=</span><span class="st">&quot;cv&quot;</span>, <span class="dt">number=</span><span class="dv">2</span>)
+fit.rpart &lt;-<span class="st"> </span><span class="kw">train</span>(medv<span class="op">~</span>., <span class="dt">data=</span>BostonHousing, <span class="dt">method=</span><span class="st">&quot;rpart&quot;</span>, <span class="dt">metric=</span><span class="st">&quot;RMSE&quot;</span>, <span class="dt">trControl=</span>control)
+<span class="co"># summarize fit</span>
+<span class="kw">print</span>(fit.rpart)</code></pre></div>
+<pre><code>## CART 
+## 
+## 506 samples
+##  13 predictor
+## 
+## No pre-processing
+## Resampling: Cross-Validated (2 fold) 
+## Summary of sample sizes: 253, 253 
+## Resampling results across tuning parameters:
+## 
+##   cp          RMSE      Rsquared 
+##   0.07165784  5.983605  0.5774758
+##   0.17117244  7.173727  0.3939811
+##   0.45274420  7.173727  0.3939811
+## 
+## RMSE was used to select the optimal model using  the smallest value.
+## The final value used for the model was cp = 0.07165784.</code></pre>
+</div>
+<div id="linear-regression" class="section level2">
+<h2><span class="header-section-number">4.2</span> Linear Regression</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Ordinary Least Squares Regression</span>
+<span class="kw">library</span>(datasets)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Employed<span class="op">~</span>., longley)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Employed ~ ., data = longley)
+## 
+## Coefficients:
+##  (Intercept)  GNP.deflator           GNP    Unemployed  Armed.Forces  
+##   -3.482e+03     1.506e-02    -3.582e-02    -2.020e-02    -1.033e-02  
+##   Population          Year  
+##   -5.110e-02     1.829e+00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, longley)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((longley<span class="op">$</span>Employed <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.0522765</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stepwise Linear Regression</span>
+
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># fit model</span>
+base &lt;-<span class="st"> </span><span class="kw">lm</span>(Employed<span class="op">~</span>., longley)
+<span class="co"># summarize the fit</span>
+<span class="kw">summary</span>(base)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Employed ~ ., data = longley)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.41011 -0.15767 -0.02816  0.10155  0.45539 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -3.482e+03  8.904e+02  -3.911 0.003560 ** 
+## GNP.deflator  1.506e-02  8.492e-02   0.177 0.863141    
+## GNP          -3.582e-02  3.349e-02  -1.070 0.312681    
+## Unemployed   -2.020e-02  4.884e-03  -4.136 0.002535 ** 
+## Armed.Forces -1.033e-02  2.143e-03  -4.822 0.000944 ***
+## Population   -5.110e-02  2.261e-01  -0.226 0.826212    
+## Year          1.829e+00  4.555e-01   4.016 0.003037 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.3049 on 9 degrees of freedom
+## Multiple R-squared:  0.9955, Adjusted R-squared:  0.9925 
+## F-statistic: 330.3 on 6 and 9 DF,  p-value: 4.984e-10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># perform step-wise feature selection</span>
+fit &lt;-<span class="st"> </span><span class="kw">step</span>(base)</code></pre></div>
+<pre><code>## Start:  AIC=-33.22
+## Employed ~ GNP.deflator + GNP + Unemployed + Armed.Forces + Population + 
+##     Year
+## 
+##                Df Sum of Sq     RSS     AIC
+## - GNP.deflator  1   0.00292 0.83935 -35.163
+## - Population    1   0.00475 0.84117 -35.129
+## - GNP           1   0.10631 0.94273 -33.305
+## &lt;none&gt;                      0.83642 -33.219
+## - Year          1   1.49881 2.33524 -18.792
+## - Unemployed    1   1.59014 2.42656 -18.178
+## - Armed.Forces  1   2.16091 2.99733 -14.798
+## 
+## Step:  AIC=-35.16
+## Employed ~ GNP + Unemployed + Armed.Forces + Population + Year
+## 
+##                Df Sum of Sq    RSS     AIC
+## - Population    1   0.01933 0.8587 -36.799
+## &lt;none&gt;                      0.8393 -35.163
+## - GNP           1   0.14637 0.9857 -34.592
+## - Year          1   1.52725 2.3666 -20.578
+## - Unemployed    1   2.18989 3.0292 -16.628
+## - Armed.Forces  1   2.39752 3.2369 -15.568
+## 
+## Step:  AIC=-36.8
+## Employed ~ GNP + Unemployed + Armed.Forces + Year
+## 
+##                Df Sum of Sq    RSS     AIC
+## &lt;none&gt;                      0.8587 -36.799
+## - GNP           1    0.4647 1.3234 -31.879
+## - Year          1    1.8980 2.7567 -20.137
+## - Armed.Forces  1    2.3806 3.2393 -17.556
+## - Unemployed    1    4.0491 4.9077 -10.908</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summarize the selected model</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Employed ~ GNP + Unemployed + Armed.Forces + Year, 
+##     data = longley)
+## 
+## Coefficients:
+##  (Intercept)           GNP    Unemployed  Armed.Forces          Year  
+##   -3.599e+03    -4.019e-02    -2.088e-02    -1.015e-02     1.887e+00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, longley)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((longley<span class="op">$</span>Employed <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.05366753</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Partial Least Squares Regression</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(pls)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">plsr</span>(Employed<span class="op">~</span>., <span class="dt">data=</span>longley, <span class="dt">validation=</span><span class="st">&quot;CV&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Partial least squares regression , fitted with the kernel algorithm.
+## Cross-validated using 10 random segments.
+## Call:
+## plsr(formula = Employed ~ ., data = longley, validation = &quot;CV&quot;)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, longley, <span class="dt">ncomp=</span><span class="dv">6</span>)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((longley<span class="op">$</span>Employed <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.0522765</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Principal Component Regression</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(pls)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">pcr</span>(Employed<span class="op">~</span>., <span class="dt">data=</span>longley, <span class="dt">validation=</span><span class="st">&quot;CV&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Principal component regression , fitted with the singular value decomposition algorithm.
+## Cross-validated using 10 random segments.
+## Call:
+## pcr(formula = Employed ~ ., data = longley, validation = &quot;CV&quot;)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, longley, <span class="dt">ncomp=</span><span class="dv">6</span>)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((longley<span class="op">$</span>Employed <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.0522765</code></pre>
+</div>
+<div id="penalized-linear-regression" class="section level2">
+<h2><span class="header-section-number">4.3</span> Penalized Linear Regression</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Elastic Net</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(glmnet)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">7</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glmnet</span>(x, y, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>, <span class="dt">lambda=</span><span class="fl">0.001</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glmnet(x = x, y = y, family = &quot;gaussian&quot;, alpha = 0.5, lambda = 0.001) 
+## 
+##      Df   %Dev Lambda
+## [1,]  6 0.9949  0.001</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((y <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.0590839</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Ridge Regression</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(glmnet)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">7</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glmnet</span>(x, y, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha=</span><span class="dv">0</span>, <span class="dt">lambda=</span><span class="fl">0.001</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glmnet(x = x, y = y, family = &quot;gaussian&quot;, alpha = 0, lambda = 0.001) 
+## 
+##      Df   %Dev Lambda
+## [1,]  6 0.9949  0.001</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((y <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.05919831</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Least Absolute Shrinkage and Selection Operator</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(lars)
+<span class="co"># load data</span>
+<span class="kw">data</span>(longley)
+x &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>])
+y &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(longley[,<span class="dv">7</span>])
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">lars</span>(x, y, <span class="dt">type=</span><span class="st">&quot;lasso&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## lars(x = x, y = y, type = &quot;lasso&quot;)
+## R-squared: 0.995 
+## Sequence of LASSO moves:
+##      GNP Unemployed Armed.Forces Year GNP Population GNP.deflator GNP
+## Var    2          3            4    6  -2          5            1   2
+## Step   1          2            3    4   5          6            7   8
+##      GNP.deflator GNP.deflator
+## Var            -1            1
+## Step            9           10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># select a step with a minimum error</span>
+best_step &lt;-<span class="st"> </span>fit<span class="op">$</span>df[<span class="kw">which.min</span>(fit<span class="op">$</span>RSS)]
+<span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, x, <span class="dt">s=</span>best_step, <span class="dt">type=</span><span class="st">&quot;fit&quot;</span>)<span class="op">$</span>fit
+<span class="co"># summarize accuracy</span>
+mse &lt;-<span class="st"> </span><span class="kw">mean</span>((y <span class="op">-</span><span class="st"> </span>predictions)<span class="op">^</span><span class="dv">2</span>)
+<span class="kw">print</span>(mse)</code></pre></div>
+<pre><code>## [1] 0.06400169</code></pre>
+</div>
+<div id="linear-classification" class="section level2">
+<h2><span class="header-section-number">4.4</span> Linear Classification</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Logistic Regression</span>
+
+<span class="co"># Load the dataset</span>
+<span class="kw">data</span>(PimaIndiansDiabetes)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">glm</span>(diabetes<span class="op">~</span>., <span class="dt">data=</span>PimaIndiansDiabetes, <span class="dt">family=</span><span class="kw">binomial</span>(<span class="dt">link=</span><span class="st">&#39;logit&#39;</span>))
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:  glm(formula = diabetes ~ ., family = binomial(link = &quot;logit&quot;), 
+##     data = PimaIndiansDiabetes)
+## 
+## Coefficients:
+## (Intercept)     pregnant      glucose     pressure      triceps  
+##   -8.404696     0.123182     0.035164    -0.013296     0.000619  
+##     insulin         mass     pedigree          age  
+##   -0.001192     0.089701     0.945180     0.014869  
+## 
+## Degrees of Freedom: 767 Total (i.e. Null);  759 Residual
+## Null Deviance:       993.5 
+## Residual Deviance: 723.4     AIC: 741.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+probabilities &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, PimaIndiansDiabetes[,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">type=</span><span class="st">&#39;response&#39;</span>)
+predictions &lt;-<span class="st"> </span><span class="kw">ifelse</span>(probabilities <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>,<span class="st">&#39;pos&#39;</span>,<span class="st">&#39;neg&#39;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, PimaIndiansDiabetes<span class="op">$</span>diabetes)</code></pre></div>
+<pre><code>##            
+## predictions neg pos
+##         neg 445 112
+##         pos  55 156</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Linear Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(MASS)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">lda</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call:
+## lda(Species ~ ., data = iris)
+## 
+## Prior probabilities of groups:
+##     setosa versicolor  virginica 
+##  0.3333333  0.3333333  0.3333333 
+## 
+## Group means:
+##            Sepal.Length Sepal.Width Petal.Length Petal.Width
+## setosa            5.006       3.428        1.462       0.246
+## versicolor        5.936       2.770        4.260       1.326
+## virginica         6.588       2.974        5.552       2.026
+## 
+## Coefficients of linear discriminants:
+##                     LD1         LD2
+## Sepal.Length  0.8293776  0.02410215
+## Sepal.Width   1.5344731  2.16452123
+## Petal.Length -2.2012117 -0.93192121
+## Petal.Width  -2.8104603  2.83918785
+## 
+## Proportion of trace:
+##    LD1    LD2 
+## 0.9912 0.0088</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])<span class="op">$</span>class
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         1
+##   virginica       0          2        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Partial Least Squares Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(caret)
+<span class="kw">data</span>(iris)
+x &lt;-<span class="st"> </span>iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+y &lt;-<span class="st"> </span>iris[,<span class="dv">5</span>]
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">plsda</span>(x, y, <span class="dt">probMethod=</span><span class="st">&quot;Bayes&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Partial least squares classification, fitted with the kernel algorithm.
+## Bayes rule was used to compute class probabilities.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         45         3
+##   virginica       0          5        47</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Logistic Regression Multiclass</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(VGAM)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">vglm</span>(Species<span class="op">~</span>., <span class="dt">family=</span>multinomial, <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## vglm(formula = Species ~ ., family = multinomial, data = iris)
+## 
+## 
+## Coefficients:
+##  (Intercept):1  (Intercept):2 Sepal.Length:1 Sepal.Length:2  Sepal.Width:1 
+##      35.360902      42.637804       9.637409       2.465220      12.358915 
+##  Sepal.Width:2 Petal.Length:1 Petal.Length:2  Petal.Width:1  Petal.Width:2 
+##       6.680887     -23.214188      -9.429385     -34.101553     -18.286137 
+## 
+## Degrees of Freedom: 300 Total; 290 Residual
+## Residual deviance: 11.89855 
+## Log-likelihood: -5.949274 
+## 
+## This is a multinomial logit model with 3 levels</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+probabilities &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
+predictions &lt;-<span class="st"> </span><span class="kw">apply</span>(probabilities, <span class="dv">1</span>, which.max)
+predictions[<span class="kw">which</span>(predictions<span class="op">==</span><span class="st">&quot;1&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">levels</span>(iris<span class="op">$</span>Species)[<span class="dv">1</span>]
+predictions[<span class="kw">which</span>(predictions<span class="op">==</span><span class="st">&quot;2&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">levels</span>(iris<span class="op">$</span>Species)[<span class="dv">2</span>]
+predictions[<span class="kw">which</span>(predictions<span class="op">==</span><span class="st">&quot;3&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">levels</span>(iris<span class="op">$</span>Species)[<span class="dv">3</span>]
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         49         1
+##   virginica       0          1        49</code></pre>
+</div>
+<div id="nonlinear-classification" class="section level2">
+<h2><span class="header-section-number">4.5</span> NonLinear Classification</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Random Forest</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(randomForest)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">randomForest</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+##  randomForest(formula = Species ~ ., data = iris) 
+##                Type of random forest: classification
+##                      Number of trees: 500
+## No. of variables tried at each split: 2
+## 
+##         OOB estimate of  error rate: 4.67%
+## Confusion matrix:
+##            setosa versicolor virginica class.error
+## setosa         50          0         0        0.00
+## versicolor      0         47         3        0.06
+## virginica       0          4        46        0.08</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         50         0
+##   virginica       0          0        50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># k-Nearest Neighbors</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(caret)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">knn3</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">k=</span><span class="dv">5</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 5-nearest neighbor classification model
+## Training set class distribution:
+## 
+##     setosa versicolor  virginica 
+##         50         50         50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         47         2
+##   virginica       0          3        48</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Naive Bayes</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(e1071)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">naiveBayes</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Naive Bayes Classifier for Discrete Predictors
+## 
+## Call:
+## naiveBayes.default(x = X, y = Y, laplace = laplace)
+## 
+## A-priori probabilities:
+## Y
+##     setosa versicolor  virginica 
+##  0.3333333  0.3333333  0.3333333 
+## 
+## Conditional probabilities:
+##             Sepal.Length
+## Y             [,1]      [,2]
+##   setosa     5.006 0.3524897
+##   versicolor 5.936 0.5161711
+##   virginica  6.588 0.6358796
+## 
+##             Sepal.Width
+## Y             [,1]      [,2]
+##   setosa     3.428 0.3790644
+##   versicolor 2.770 0.3137983
+##   virginica  2.974 0.3224966
+## 
+##             Petal.Length
+## Y             [,1]      [,2]
+##   setosa     1.462 0.1736640
+##   versicolor 4.260 0.4699110
+##   virginica  5.552 0.5518947
+## 
+##             Petal.Width
+## Y             [,1]      [,2]
+##   setosa     0.246 0.1053856
+##   versicolor 1.326 0.1977527
+##   virginica  2.026 0.2746501</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         47         3
+##   virginica       0          3        47</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Classification and Regression Trees</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(rpart)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">rpart</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## n= 150 
+## 
+## node), split, n, loss, yval, (yprob)
+##       * denotes terminal node
+## 
+## 1) root 150 100 setosa (0.33333333 0.33333333 0.33333333)  
+##   2) Petal.Length&lt; 2.45 50   0 setosa (1.00000000 0.00000000 0.00000000) *
+##   3) Petal.Length&gt;=2.45 100  50 versicolor (0.00000000 0.50000000 0.50000000)  
+##     6) Petal.Width&lt; 1.75 54   5 versicolor (0.00000000 0.90740741 0.09259259) *
+##     7) Petal.Width&gt;=1.75 46   1 virginica (0.00000000 0.02173913 0.97826087) *</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         49         5
+##   virginica       0          1        45</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># PART</span>
+
+<span class="co"># load the package</span>
+<span class="co"># library(RWeka)</span>
+<span class="co"># # load data</span>
+<span class="co"># data(iris)</span>
+<span class="co"># # fit model</span>
+<span class="co"># fit &lt;- PART(Species~., data=iris)</span>
+<span class="co"># # summarize the fit</span>
+<span class="co"># print(fit)</span>
+<span class="co"># # make predictions</span>
+<span class="co"># predictions &lt;- predict(fit, iris[,1:4])</span>
+<span class="co"># # summarize accuracy</span>
+<span class="co"># table(predictions, iris$Species)</span>
+
+<span class="co"># Classification and Regression Trees</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(rpart)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">rpart</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## n= 150 
+## 
+## node), split, n, loss, yval, (yprob)
+##       * denotes terminal node
+## 
+## 1) root 150 100 setosa (0.33333333 0.33333333 0.33333333)  
+##   2) Petal.Length&lt; 2.45 50   0 setosa (1.00000000 0.00000000 0.00000000) *
+##   3) Petal.Length&gt;=2.45 100  50 versicolor (0.00000000 0.50000000 0.50000000)  
+##     6) Petal.Width&lt; 1.75 54   5 versicolor (0.00000000 0.90740741 0.09259259) *
+##     7) Petal.Width&gt;=1.75 46   1 virginica (0.00000000 0.02173913 0.97826087) *</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         49         5
+##   virginica       0          1        45</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># C5.0</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(C50)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">C5.0</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">trials=</span><span class="dv">10</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Call:
+## C5.0.formula(formula = Species ~ ., data = iris, trials = 10)
+## 
+## Classification Tree
+## Number of samples: 150 
+## Number of predictors: 4 
+## 
+## Number of boosting iterations: 10 
+## Average tree size: 4.9 
+## 
+## Non-standard options: attempt to group attributes</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         50         0
+##   virginica       0          0        50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Flexible Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(mda)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">fda</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call:
+## fda(formula = Species ~ ., data = iris)
+## 
+## Dimension: 2 
+## 
+## Percent Between-Group Variance Explained:
+##     v1     v2 
+##  99.12 100.00 
+## 
+## Degrees of Freedom (per dimension): 5 
+## 
+## Training Misclassification Error: 0.02 ( N = 150 )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         1
+##   virginica       0          2        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Gradient Boosted Machine</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(gbm)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">gbm</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">distribution=</span><span class="st">&quot;multinomial&quot;</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## gbm(formula = Species ~ ., distribution = &quot;multinomial&quot;, data = iris)
+## A gradient boosted model with multinomial loss function.
+## 100 iterations were performed.
+## There were 4 predictors of which 3 had non-zero influence.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+probabilities &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">n.trees=</span><span class="dv">1</span>)
+predictions &lt;-<span class="st">  </span><span class="kw">colnames</span>(probabilities)[<span class="kw">apply</span>(probabilities, <span class="dv">1</span>, which.max)]
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         44         1
+##   virginica       0          6        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Regularized Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(klaR)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">rda</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">gamma=</span><span class="fl">0.05</span>, <span class="dt">lambda=</span><span class="fl">0.01</span>)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call: 
+## rda(formula = Species ~ ., data = iris, gamma = 0.05, lambda = 0.01)
+## 
+## Regularization parameters: 
+##  gamma lambda 
+##   0.05   0.01 
+## 
+## Prior probabilities of groups: 
+##     setosa versicolor  virginica 
+##  0.3333333  0.3333333  0.3333333 
+## 
+## Misclassification rate: 
+##        apparent: 2 %</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])<span class="op">$</span>class
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         1
+##   virginica       0          2        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Support Vector Machine</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(kernlab)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">ksvm</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Support Vector Machine object of class &quot;ksvm&quot; 
+## 
+## SV type: C-svc  (classification) 
+##  parameter : cost C = 1 
+## 
+## Gaussian Radial Basis kernel function. 
+##  Hyperparameter : sigma =  0.79140603474701 
+## 
+## Number of Support Vectors : 59 
+## 
+## Objective Function Value : -4.5039 -5.0083 -20.3294 
+## Training error : 0.026667</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         2
+##   virginica       0          2        48</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Feed Forward Neural Network</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(nnet)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">nnet</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris, <span class="dt">size=</span><span class="dv">4</span>, <span class="dt">decay=</span><span class="fl">0.0001</span>, <span class="dt">maxit=</span><span class="dv">500</span>)</code></pre></div>
+<pre><code>## # weights:  35
+## initial  value 170.333986 
+## iter  10 value 69.831413
+## iter  20 value 69.449070
+## iter  30 value 69.430431
+## iter  40 value 11.186591
+## iter  50 value 6.379738
+## iter  60 value 6.190982
+## iter  70 value 6.124966
+## iter  80 value 6.105977
+## iter  90 value 6.093173
+## iter 100 value 6.064303
+## iter 110 value 6.062953
+## iter 120 value 6.057947
+## iter 130 value 6.054886
+## iter 140 value 6.049571
+## iter 150 value 5.907665
+## iter 160 value 3.947842
+## iter 170 value 2.617102
+## iter 180 value 1.941582
+## iter 190 value 1.513265
+## iter 200 value 1.154675
+## iter 210 value 0.995975
+## iter 220 value 0.971838
+## iter 230 value 0.928796
+## iter 240 value 0.902974
+## iter 250 value 0.901196
+## iter 260 value 0.899787
+## iter 270 value 0.897539
+## iter 280 value 0.896780
+## iter 290 value 0.895968
+## iter 300 value 0.895416
+## iter 310 value 0.893081
+## iter 320 value 0.872434
+## iter 330 value 0.818017
+## iter 340 value 0.771552
+## iter 350 value 0.714454
+## iter 360 value 0.681312
+## iter 370 value 0.614933
+## iter 380 value 0.567013
+## iter 390 value 0.546092
+## iter 400 value 0.528440
+## iter 410 value 0.501998
+## iter 420 value 0.484368
+## iter 430 value 0.452311
+## iter 440 value 0.423398
+## iter 450 value 0.415509
+## iter 460 value 0.392730
+## iter 470 value 0.380538
+## iter 480 value 0.370031
+## iter 490 value 0.360093
+## iter 500 value 0.352495
+## final  value 0.352495 
+## stopped after 500 iterations</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## a 4-4-3 network with 35 weights
+## inputs: Sepal.Length Sepal.Width Petal.Length Petal.Width 
+## output(s): Species 
+## options were - softmax modelling  decay=1e-04</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         50         0
+##   virginica       0          0        50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Quadratic Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(MASS)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">qda</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call:
+## qda(Species ~ ., data = iris)
+## 
+## Prior probabilities of groups:
+##     setosa versicolor  virginica 
+##  0.3333333  0.3333333  0.3333333 
+## 
+## Group means:
+##            Sepal.Length Sepal.Width Petal.Length Petal.Width
+## setosa            5.006       3.428        1.462       0.246
+## versicolor        5.936       2.770        4.260       1.326
+## virginica         6.588       2.974        5.552       2.026</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])<span class="op">$</span>class
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         1
+##   virginica       0          2        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mixture Discriminant Analysis</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(mda)
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">mda</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## Call:
+## mda(formula = Species ~ ., data = iris)
+## 
+## Dimension: 4 
+## 
+## Percent Between-Group Variance Explained:
+##     v1     v2     v3     v4 
+##  96.14  98.60  99.90 100.00 
+## 
+## Degrees of Freedom (per dimension): 5 
+## 
+## Training Misclassification Error: 0.02 ( N = 150 )
+## 
+## Deviance: 15.045</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         48         1
+##   virginica       0          2        49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># C4.5</span>
+
+<span class="co"># load the package</span>
+<span class="co"># library(RWeka)</span>
+<span class="co"># # load data</span>
+<span class="co"># data(iris)</span>
+<span class="co"># # fit model</span>
+<span class="co"># fit &lt;- J48(Species~., data=iris)</span>
+<span class="co"># # summarize the fit</span>
+<span class="co"># print(fit)</span>
+<span class="co"># # make predictions</span>
+<span class="co"># predictions &lt;- predict(fit, iris[,1:4])</span>
+<span class="co"># # summarize accuracy</span>
+<span class="co"># table(predictions, iris$Species)</span>
+
+<span class="co"># Bagging CART</span>
+
+<span class="co"># load the package</span>
+<span class="kw">library</span>(ipred)
+<span class="co"># load data</span>
+<span class="kw">data</span>(iris)
+<span class="co"># fit model</span>
+fit &lt;-<span class="st"> </span><span class="kw">bagging</span>(Species<span class="op">~</span>., <span class="dt">data=</span>iris)
+<span class="co"># summarize the fit</span>
+<span class="kw">print</span>(fit)</code></pre></div>
+<pre><code>## 
+## Bagging classification trees with 25 bootstrap replications 
+## 
+## Call: bagging.data.frame(formula = Species ~ ., data = iris)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make predictions</span>
+predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, iris[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)
+<span class="co"># summarize accuracy</span>
+<span class="kw">table</span>(predictions, iris<span class="op">$</span>Species)</code></pre></div>
+<pre><code>##             
+## predictions  setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         50         1
+##   virginica       0          0        49</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prepare-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="improve-accuracy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tymenschreuder/project-template-analysis/edit/gh-pages/04-EvaluateAlgorithms.Rmd",
+"text": "Edit"
+},
+"download": ["project-template-analysis.pdf", "project-template-analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
